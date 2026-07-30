@@ -26,8 +26,8 @@ The setup command presents one terminal `yes/no` confirmation. Use `--yes` only
 when the user already gave explicit installation approval. Never install
 third-party skills silently.
 
-Stitch and Figma modules are optional integrations. Check or offer only the
-integration required by the task:
+Registered integration modules are optional. Check or offer only the
+integration required by the current task:
 
 ```bash
 python3 <skill-base-dir>/scripts/setup.py \

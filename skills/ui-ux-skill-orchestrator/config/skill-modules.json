@@ -100,7 +100,7 @@
         "audit",
         "design-system"
       ],
-      "specialties": ["layout"],
+      "specialties": ["direction", "layout"],
       "source": {
         "package": "deeflect/mies",
         "skill": "mies",

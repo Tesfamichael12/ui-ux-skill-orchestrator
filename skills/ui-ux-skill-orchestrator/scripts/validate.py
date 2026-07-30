@@ -75,6 +75,12 @@ def validate_modules(errors: list[str]) -> None:
         return
     if payload.get("schema_version") != 1:
         errors.append("Module manifest schema_version must be 1.")
+    portfolio_version = payload.get("portfolio_version")
+    if not isinstance(portfolio_version, str) or not re.fullmatch(
+        r"\d+\.\d+\.\d+",
+        portfolio_version,
+    ):
+        errors.append("Module manifest portfolio_version must use semantic X.Y.Z.")
     modules = payload.get("modules")
     if not isinstance(modules, list) or not modules:
         errors.append("Module manifest must contain a non-empty modules list.")
@@ -158,12 +164,24 @@ def validate_modules(errors: list[str]) -> None:
                 f"{module_id}.source must contain exactly package, skill, and url."
             )
             continue
-        if not re.fullmatch(r"[^/\s]+/[^/\s]+", source["package"]):
+        package = source["package"]
+        install_skill = source["skill"]
+        source_url = source["url"]
+        if not isinstance(package, str) or not re.fullmatch(
+            r"[^/\s]+/[^/\s]+",
+            package,
+        ):
             errors.append(f"{module_id}.source.package must use owner/repository.")
-        if not NAME_PATTERN.fullmatch(source["skill"]):
+        if not isinstance(install_skill, str) or not NAME_PATTERN.fullmatch(
+            install_skill
+        ):
             errors.append(f"{module_id}.source.skill must be lowercase hyphen-case.")
-        parsed_url = urlparse(source["url"])
-        if parsed_url.scheme != "https" or parsed_url.netloc != "github.com":
+        parsed_url = urlparse(source_url) if isinstance(source_url, str) else None
+        if (
+            parsed_url is None
+            or parsed_url.scheme != "https"
+            or parsed_url.netloc != "github.com"
+        ):
             errors.append(f"{module_id}.source.url must be an HTTPS GitHub URL.")
 
 

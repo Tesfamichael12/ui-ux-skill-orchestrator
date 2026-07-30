@@ -71,7 +71,15 @@ CAPABILITY_SIGNALS = {
 QUERY_ALIASES = {
     "typography": {"font", "fonts", "type", "typeface", "typefaces", "typography"},
     "color": {"color", "colors", "colour", "colours", "palette", "palettes", "theme"},
-    "layout": {"alignment", "density", "grid", "layout", "space", "spacing"},
+    "layout": {
+        "alignment",
+        "density",
+        "grid",
+        "hierarchy",
+        "layout",
+        "space",
+        "spacing",
+    },
     "components": {
         "button",
         "buttons",
@@ -114,7 +122,23 @@ QUERY_ALIASES = {
     "figma": {"figma"},
     "stitch": {"stitch"},
     "ux": {"flow", "journey", "research", "usability", "ux"},
-    "direction": {"aesthetic", "brand", "design", "redesign", "style", "visual"},
+    "direction": {
+        "aesthetic",
+        "bold",
+        "brand",
+        "calm",
+        "design",
+        "distinctive",
+        "editorial",
+        "luxury",
+        "minimal",
+        "minimalist",
+        "premium",
+        "redesign",
+        "restrained",
+        "style",
+        "visual",
+    },
     "implementation": {"css", "frontend", "html", "next", "react", "tailwind", "vue"},
 }
 

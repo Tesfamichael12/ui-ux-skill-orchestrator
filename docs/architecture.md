@@ -72,7 +72,8 @@ Unregistered UI/UX skills remain discoverable and can be evaluated at runtime,
 but are never installed automatically.
 
 Core modules cover common frontend work. Integration modules are offered only
-when a tool-bound workflow such as Stitch or Figma needs them.
+when the current task needs their narrow capability, such as a Stitch or Figma
+workflow or a future domain-specific specialist.
 
 ## Installation security
 

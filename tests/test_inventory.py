@@ -91,6 +91,35 @@ class InventoryTests(unittest.TestCase):
             self.assertEqual(records[0].name, "ui-animation")
             self.assertGreater(records[0].score, records[1].score)
 
+    def test_restrained_direction_prefers_mies_over_general_lead(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            write_skill(
+                root,
+                "mies",
+                "mies",
+                "Restrained UI direction, hierarchy, layout, and spacing.",
+            )
+            write_skill(
+                root,
+                "frontend-design",
+                "frontend-design",
+                "Creates distinctive frontend visual design.",
+            )
+            with patch.object(
+                inventory,
+                "root_specs",
+                return_value=[(root, "project", "codex:project")],
+            ):
+                records = inventory.discover(
+                    "codex",
+                    root,
+                    False,
+                    "Refine this dashboard into a calm restrained layout",
+                )
+            scores = {record.name: record.score for record in records}
+            self.assertGreater(scores["mies"], scores["frontend-design"])
+
     def test_dynamic_ui_skill_is_discovered(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

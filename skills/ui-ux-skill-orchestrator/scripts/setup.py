@@ -147,7 +147,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--include-integrations",
         action="store_true",
-        help="Include optional Stitch and Figma integrations.",
+        help="Include every optional integration registered in the manifest.",
     )
     parser.add_argument(
         "--only",
