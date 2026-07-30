@@ -32,6 +32,12 @@ If the script is unavailable, inspect the host's advertised skills and their `na
 
 For each selected skill, use native skill invocation when the host supports it. Otherwise read the selected `SKILL.md` from the inventory path. Read each selected instruction file completely before applying it.
 
+The registered portfolio is data-driven. Read
+[config/skill-modules.json](config/skill-modules.json) only when checking
+dependencies, aliases, provenance, or extending the portfolio. Treat an
+unregistered discovered skill as a dynamic candidate and evaluate it using the
+rules in [references/capability-map.md](references/capability-map.md).
+
 ## Step 2: Establish design truth
 
 Inspect the target and record:

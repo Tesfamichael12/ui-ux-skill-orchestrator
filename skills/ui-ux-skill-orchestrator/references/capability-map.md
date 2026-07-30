@@ -21,7 +21,7 @@ Use this file to appoint one lead and narrowly scoped specialists. Installed met
 | `mies` | The brief calls for calm, premium restraint, reduction, exact spacing, or removal of noise | Subtractive critique, proportion, spacing, alignment, density, restrained product UI | Adding decorative novelty or generating many visual options |
 | `ui-ux-pro-max` | The task needs searchable evidence for product patterns, font pairings, palettes, charts, UX rules, or stack guidance | Candidate research and structured recommendations across typography, color, style, charts, UX, and frameworks | Final creative authority or replacing incumbent tokens without approval |
 | `ui-animation` | Motion is requested, complex, broken, performance-sensitive, gesture-based, or must match a recording | Motion purpose, timing, easing, springs, gestures, interruption, reduced motion, animation review | Palette, typography, or overall page direction |
-| `taste-design` | Google Stitch or a Stitch-oriented `DESIGN.md` is the delivery target | Semantic Stitch design systems, anti-generic generation constraints, calibrated motion guidance | Ordinary frontend implementation without Stitch |
+| `stitch-design-taste` (`taste-design` alias) | Google Stitch or a Stitch-oriented `DESIGN.md` is the delivery target | Semantic Stitch design systems, anti-generic generation constraints, calibrated motion guidance | Ordinary frontend implementation without Stitch |
 | `figma-create-design-system-rules` | Figma MCP is connected and the user wants persistent Figma-to-code conventions | Codebase-derived design-system rules and Figma implementation workflow | General visual design, or use without Figma MCP |
 | `ui-ux-skill-orchestrator` | Multiple skills overlap or any frontend UI/UX task needs routing | Portfolio selection, ownership, sequencing, conflict resolution, synthesis | Supplying a competing aesthetic opinion |
 
@@ -29,7 +29,7 @@ Use this file to appoint one lead and narrowly scoped specialists. Installed met
 
 Choose in this order:
 
-1. **Tool-bound task:** use `taste-design` for Stitch or `figma-create-design-system-rules` for Figma rules.
+1. **Tool-bound task:** use `stitch-design-taste` or its installed `taste-design` alias for Stitch; use `figma-create-design-system-rules` for Figma rules.
 2. **Narrow specialist task:** use `ui-animation` for motion, an accessibility specialist for accessibility-only work, or a typography specialist for typography-only work.
 3. **Existing-system component/fix:** treat the incumbent design system as lead; add a narrow specialist only.
 4. **Greenfield or replacement visual world:** use `frontend-design` for the thesis; use `impeccable` as production integrator or final reviewer.

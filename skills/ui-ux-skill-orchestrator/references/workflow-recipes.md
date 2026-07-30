@@ -86,7 +86,7 @@ Do not redesign global fonts, palette, or spacing for one component.
 
 ## Stitch workflow
 
-1. Use `taste-design` as lead when the deliverable is Stitch-oriented `DESIGN.md` or Stitch screen generation.
+1. Use `stitch-design-taste` or its installed `taste-design` alias as lead when the deliverable is Stitch-oriented `DESIGN.md` or Stitch screen generation.
 2. Use `ui-ux-pro-max` for supporting research when helpful.
 3. Keep exact semantic values and anti-patterns in the generated design system.
 4. Validate that implementation output still follows repository and accessibility constraints.

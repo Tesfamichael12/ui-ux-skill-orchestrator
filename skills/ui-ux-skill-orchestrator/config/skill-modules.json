@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "portfolio_version": "1.0.0",
+  "modules": [
+    {
+      "id": "frontend-design",
+      "display_name": "Frontend Design",
+      "tier": "core",
+      "role": "creative-direction",
+      "description": "Establishes a distinctive visual thesis for greenfield UI and intentional redesigns.",
+      "aliases": [],
+      "capabilities": [
+        "direction",
+        "typography",
+        "color",
+        "layout",
+        "components",
+        "responsive"
+      ],
+      "specialties": ["direction"],
+      "source": {
+        "package": "anthropics/skills",
+        "skill": "frontend-design",
+        "url": "https://github.com/anthropics/skills"
+      }
+    },
+    {
+      "id": "impeccable",
+      "display_name": "Impeccable",
+      "tier": "core",
+      "role": "production-integrator",
+      "description": "Owns production craft, audits, responsive hardening, accessibility review, and bounded visual QA.",
+      "aliases": [],
+      "capabilities": [
+        "direction",
+        "ux",
+        "typography",
+        "color",
+        "layout",
+        "components",
+        "motion",
+        "accessibility",
+        "responsive",
+        "performance",
+        "audit",
+        "design-system",
+        "implementation"
+      ],
+      "specialties": ["audit", "performance", "responsive"],
+      "source": {
+        "package": "pbakaus/impeccable",
+        "skill": "impeccable",
+        "url": "https://github.com/pbakaus/impeccable"
+      }
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "display_name": "UI UX Pro Max",
+      "tier": "core",
+      "role": "design-evidence",
+      "description": "Provides searchable font, palette, product-pattern, chart, UX, and implementation evidence.",
+      "aliases": [],
+      "capabilities": [
+        "direction",
+        "ux",
+        "typography",
+        "color",
+        "layout",
+        "components",
+        "motion",
+        "accessibility",
+        "responsive",
+        "performance",
+        "data-viz",
+        "implementation"
+      ],
+      "specialties": ["typography", "color", "data-viz", "ux"],
+      "source": {
+        "package": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "skill": "ui-ux-pro-max",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+      }
+    },
+    {
+      "id": "mies",
+      "display_name": "Mies",
+      "tier": "core",
+      "role": "restraint-and-layout",
+      "description": "Owns subtractive critique, proportion, spacing, alignment, density, and restrained product direction.",
+      "aliases": [],
+      "capabilities": [
+        "direction",
+        "ux",
+        "typography",
+        "layout",
+        "components",
+        "motion",
+        "accessibility",
+        "responsive",
+        "audit",
+        "design-system"
+      ],
+      "specialties": ["layout"],
+      "source": {
+        "package": "deeflect/mies",
+        "skill": "mies",
+        "url": "https://github.com/deeflect/mies"
+      }
+    },
+    {
+      "id": "ui-animation",
+      "display_name": "UI Animation",
+      "tier": "core",
+      "role": "motion-specialist",
+      "description": "Owns motion purpose, timing, easing, springs, gestures, interruption, performance, and reduced motion.",
+      "aliases": [],
+      "capabilities": [
+        "motion",
+        "accessibility",
+        "performance",
+        "components",
+        "audit"
+      ],
+      "specialties": ["motion"],
+      "source": {
+        "package": "mblode/agent-skills",
+        "skill": "ui-animation",
+        "url": "https://github.com/mblode/agent-skills"
+      }
+    },
+    {
+      "id": "stitch-design-taste",
+      "display_name": "Stitch Design Taste",
+      "tier": "integration",
+      "role": "stitch-design-system",
+      "description": "Generates a premium semantic DESIGN.md when Google Stitch is the target.",
+      "aliases": ["taste-design"],
+      "capabilities": [
+        "direction",
+        "typography",
+        "color",
+        "layout",
+        "motion",
+        "design-system",
+        "stitch"
+      ],
+      "specialties": ["stitch"],
+      "source": {
+        "package": "Leonxlnx/taste-skill",
+        "skill": "stitch-design-taste",
+        "url": "https://github.com/Leonxlnx/taste-skill"
+      }
+    },
+    {
+      "id": "figma-create-design-system-rules",
+      "display_name": "Figma Design System Rules",
+      "tier": "integration",
+      "role": "figma-rules",
+      "description": "Creates repository-specific Figma-to-code rules when Figma MCP is connected.",
+      "aliases": [],
+      "capabilities": ["design-system", "figma", "implementation"],
+      "specialties": ["figma", "design-system"],
+      "source": {
+        "package": "openai/skills",
+        "skill": "figma-create-design-system-rules",
+        "url": "https://github.com/openai/skills"
+      }
+    }
+  ]
+}
