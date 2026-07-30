@@ -1,0 +1,40 @@
+name: Module request
+description: Propose a new or replacement UI/UX specialist.
+title: "[Module]: "
+labels: ["module"]
+body:
+  - type: input
+    id: repository
+    attributes:
+      label: Original public repository
+      placeholder: https://github.com/owner/repository
+    validations:
+      required: true
+  - type: input
+    id: skill
+    attributes:
+      label: Installable skill name
+      placeholder: example-skill
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: Portfolio gap
+      description: What narrower capability does this add?
+    validations:
+      required: true
+  - type: textarea
+    id: ownership
+    attributes:
+      label: Proposed ownership
+      description: State capabilities, specialties, and what it must not override.
+    validations:
+      required: true
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Routing scenario
+      description: Provide a realistic prompt and expected role.
+    validations:
+      required: true

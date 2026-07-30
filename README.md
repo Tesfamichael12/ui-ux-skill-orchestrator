@@ -33,6 +33,59 @@ Replace `codex` with another supported agent identifier such as
 Restart the agent after installation if it does not refresh its skill inventory
 automatically.
 
+## Set up the specialist portfolio
+
+On its first UI/UX task, the orchestrator checks whether its core specialists
+are available. If any are missing, it identifies their original repositories
+and asks before installing them.
+
+Run the same check manually from a clone:
+
+```bash
+python3 skills/ui-ux-skill-orchestrator/scripts/setup.py \
+  --agent codex \
+  --check
+```
+
+Offer one interactive installation prompt:
+
+```bash
+python3 skills/ui-ux-skill-orchestrator/scripts/setup.py \
+  --agent codex
+```
+
+Preview every command without changing the system:
+
+```bash
+python3 skills/ui-ux-skill-orchestrator/scripts/setup.py \
+  --agent codex \
+  --dry-run
+```
+
+The script never installs third-party skills without terminal confirmation.
+`--yes` exists for automation, but should be used only after the user has
+explicitly approved the listed sources.
+
+### Core modules
+
+| Module | Primary responsibility | Source |
+|---|---|---|
+| `frontend-design` | Distinctive visual direction | [anthropics/skills](https://github.com/anthropics/skills) |
+| `impeccable` | Production integration and audit | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) |
+| `ui-ux-pro-max` | Font, palette, UX, chart, and stack evidence | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) |
+| `mies` | Restraint, spacing, hierarchy, and reduction | [deeflect/mies](https://github.com/deeflect/mies) |
+| `ui-animation` | Motion mechanics and reduced-motion behavior | [mblode/agent-skills](https://github.com/mblode/agent-skills) |
+
+### Optional integrations
+
+| Module | Used when | Source |
+|---|---|---|
+| `stitch-design-taste` | Google Stitch or `DESIGN.md` is the target | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) |
+| `figma-create-design-system-rules` | Figma MCP rules are requested | [openai/skills](https://github.com/openai/skills) |
+
+These dependencies are referenced, not redistributed. Each remains governed by
+its own license and release process.
+
 ## Use
 
 Invoke it explicitly:
@@ -86,6 +139,33 @@ The package follows the open Agent Skills format: a `SKILL.md` with YAML
 frontmatter plus optional scripts and references. It is designed for
 skills-compatible agents including Codex, Claude Code, Cursor, Antigravity,
 Gemini CLI, OpenCode, GitHub Copilot, and others supported by the Skills CLI.
+
+## Modular by design
+
+The specialist registry lives in
+[`config/skill-modules.json`](skills/ui-ux-skill-orchestrator/config/skill-modules.json).
+Each entry declares aliases, capabilities, specialties, role, tier, and source.
+The discovery and setup scripts consume this file directly.
+
+New specialists can therefore be added without changing routing code. The
+orchestrator also discovers unregistered UI/UX skills and can use them as
+dynamic candidates after evaluating their scope and dependencies.
+
+See [Architecture](docs/architecture.md) and
+[Adding a module](docs/adding-a-module.md).
+
+## Development
+
+The runtime has no third-party Python dependency.
+
+```bash
+python3 skills/ui-ux-skill-orchestrator/scripts/validate.py
+python3 -m unittest discover -s tests -v
+npx skills add . --list
+```
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before proposing changes. Security
+concerns should follow [SECURITY.md](SECURITY.md).
 
 ## License
 
