@@ -7,6 +7,39 @@ description: Route UI/UX and visual frontend work to the smallest high-value com
 
 Select specialists; do not compete with them. Establish one source of design truth, appoint one lead, assign narrow ownership to supporting skills, and merge their decisions before implementation.
 
+## Step 0: Check specialist readiness
+
+At the first UI/UX request in a session, determine the host agent and run:
+
+```bash
+python3 <skill-base-dir>/scripts/setup.py --agent <host> --check
+```
+
+If core modules are missing, show the user the missing names and original
+sources, then ask permission to install them. After explicit approval, run:
+
+```bash
+python3 <skill-base-dir>/scripts/setup.py --agent <host>
+```
+
+The setup command presents one terminal `yes/no` confirmation. Use `--yes` only
+when the user already gave explicit installation approval. Never install
+third-party skills silently.
+
+Stitch and Figma modules are optional integrations. Check or offer only the
+integration required by the task:
+
+```bash
+python3 <skill-base-dir>/scripts/setup.py \
+  --agent <host> \
+  --only stitch-design-taste
+```
+
+If the user declines installation, continue with the fallback rules in
+[references/capability-map.md](references/capability-map.md). Missing
+specialists reduce available evidence; they do not automatically block the
+task.
+
 ## Non-negotiable rules
 
 1. Honor the user brief and existing product system before any skill preference.
