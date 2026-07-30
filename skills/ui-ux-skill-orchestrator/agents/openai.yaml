@@ -1,0 +1,6 @@
+interface:
+  display_name: "UI/UX Skill Orchestrator"
+  short_description: "Route frontend design work to the right skills"
+  default_prompt: "Use $ui-ux-skill-orchestrator to route and execute this frontend UI/UX task with the best available specialist skills."
+policy:
+  allow_implicit_invocation: true
