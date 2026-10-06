@@ -9,8 +9,11 @@ validation are welcome.
 2. Keep the orchestrator neutral: specialists own design opinions; the
    orchestrator owns selection, boundaries, sequencing, and synthesis.
 3. Do not vendor third-party skills or copy their instructions.
-4. Add new specialists through the module manifest unless routing mechanics
-   genuinely need to change.
+4. Add new specialists through the module manifest and new routing behavior
+   through `config/routing-rules.json` unless routing mechanics genuinely need
+   to change.
+5. Keep scripts on the Python standard library and compatible with Python
+   3.9.
 
 ## Local workflow
 
@@ -35,6 +38,12 @@ Follow [docs/adding-a-module.md](docs/adding-a-module.md). Include:
 - narrow capabilities and specialties;
 - a realistic prompt demonstrating why the module improves routing;
 - a fallback for users who decline installation.
+
+## Changing routing
+
+Follow [docs/adding-a-routing-rule.md](docs/adding-a-routing-rule.md). Include
+the requests the rule must catch, the near misses it must not catch, and
+golden scenarios in `tests/test_route.py` for both.
 
 ## Pull request checklist
 

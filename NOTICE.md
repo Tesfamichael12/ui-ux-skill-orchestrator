@@ -10,9 +10,10 @@ The current module sources are:
 - Impeccable — https://github.com/pbakaus/impeccable
 - UI UX Pro Max — https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
 - Mies — https://github.com/deeflect/mies
-- UI Animation — https://github.com/mblode/agent-skills
+- UI Animation, Typography Audit, and UI Verification — https://github.com/mblode/agent-skills
+- Fixing Accessibility — https://github.com/ibelick/ui-skills
 - Stitch Design Taste — https://github.com/Leonxlnx/taste-skill
-- Figma skills — https://github.com/openai/skills
+- Figma Create Design System Rules and Figma Implement Design — https://github.com/openai/skills
 
 Each project retains its own copyright, trademarks, and license terms. Project
 names are used only to identify interoperable optional dependencies.

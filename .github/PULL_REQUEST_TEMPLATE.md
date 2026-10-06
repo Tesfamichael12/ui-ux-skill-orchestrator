@@ -11,6 +11,7 @@ State which lead, specialist, concern, or fallback behavior changes.
 - [ ] `python3 skills/ui-ux-skill-orchestrator/scripts/validate.py`
 - [ ] `python3 -m unittest discover -s tests -v`
 - [ ] `npx skills add . --list`
+- [ ] Golden scenarios in `tests/test_route.py` cover changed routing
 - [ ] Forward-tested when routing behavior changed
 
 ## Safety

@@ -10,7 +10,7 @@ body:
     id: version
     attributes:
       label: Version or commit
-      placeholder: v0.1.0 or commit SHA
+      placeholder: v0.2.0 or commit SHA
     validations:
       required: true
   - type: dropdown
@@ -21,11 +21,29 @@ body:
         - Codex
         - Claude Code
         - Cursor
-        - Antigravity
-        - Gemini CLI
-        - OpenCode
         - GitHub Copilot
+        - Gemini CLI
+        - Antigravity
+        - OpenCode
+        - Windsurf
+        - Cline
+        - Roo Code
+        - Kiro CLI
+        - Amp
         - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Routing brief (route.py)
+        - Skill discovery or ranking (inventory_ui_skills.py)
+        - Setup or installation (setup.py)
+        - Validation (validate.py)
+        - SKILL.md workflow or references
+        - Claude Code plugin
     validations:
       required: true
   - type: textarea
@@ -51,4 +69,6 @@ body:
     id: evidence
     attributes:
       label: Relevant output
-      description: Include inventory or setup output with secrets removed.
+      description: >-
+        Include route.py, inventory, or setup output with secrets removed. For
+        routing issues, `route.py --format json --query "<request>"` helps most.
