@@ -1,6 +1,10 @@
 {
   "schema_version": 1,
-  "portfolio_version": "1.0.0",
+  "portfolio_version": "1.1.0",
+  "prerequisites": {
+    "browser-automation": "A runnable app plus Playwright or Chrome DevTools browser tools.",
+    "figma-mcp": "A connected Figma MCP server and a Figma link or desktop selection."
+  },
   "modules": [
     {
       "id": "frontend-design",
@@ -8,6 +12,7 @@
       "tier": "core",
       "role": "creative-direction",
       "description": "Establishes a distinctive visual thesis for greenfield UI and intentional redesigns.",
+      "lead_capable": true,
       "aliases": [],
       "capabilities": [
         "direction",
@@ -18,6 +23,7 @@
         "responsive"
       ],
       "specialties": ["direction"],
+      "keywords": ["distinctive", "bold", "editorial", "greenfield", "landing page", "memorable", "art direction", "from scratch"],
       "source": {
         "package": "anthropics/skills",
         "skill": "frontend-design",
@@ -30,6 +36,7 @@
       "tier": "core",
       "role": "production-integrator",
       "description": "Owns production craft, audits, responsive hardening, accessibility review, and bounded visual QA.",
+      "lead_capable": true,
       "aliases": [],
       "capabilities": [
         "direction",
@@ -47,6 +54,7 @@
         "implementation"
       ],
       "specialties": ["audit", "performance", "responsive"],
+      "keywords": ["polish", "production", "harden", "hardening", "critique", "ship", "redesign", "overhaul"],
       "source": {
         "package": "pbakaus/impeccable",
         "skill": "impeccable",
@@ -58,7 +66,7 @@
       "display_name": "UI UX Pro Max",
       "tier": "core",
       "role": "design-evidence",
-      "description": "Provides searchable font, palette, product-pattern, chart, UX, and implementation evidence.",
+      "description": "Provides searchable style, font, palette, product-pattern, chart, UX, design-system, and stack evidence.",
       "aliases": [],
       "capabilities": [
         "direction",
@@ -70,11 +78,14 @@
         "motion",
         "accessibility",
         "responsive",
+        "platform",
         "performance",
+        "design-system",
         "data-viz",
         "implementation"
       ],
       "specialties": ["typography", "color", "data-viz", "ux"],
+      "keywords": ["font pairing", "palette", "chart type", "product type", "style options", "inspiration", "best practice", "tech stack"],
       "source": {
         "package": "nextlevelbuilder/ui-ux-pro-max-skill",
         "skill": "ui-ux-pro-max",
@@ -87,6 +98,7 @@
       "tier": "core",
       "role": "restraint-and-layout",
       "description": "Owns subtractive critique, proportion, spacing, alignment, density, and restrained product direction.",
+      "lead_capable": true,
       "aliases": [],
       "capabilities": [
         "direction",
@@ -101,6 +113,7 @@
         "design-system"
       ],
       "specialties": ["direction", "layout"],
+      "keywords": ["calm", "restrained", "restraint", "minimal", "minimalist", "reduce", "declutter", "quiet", "understated", "density"],
       "source": {
         "package": "deeflect/mies",
         "skill": "mies",
@@ -122,10 +135,29 @@
         "audit"
       ],
       "specialties": ["motion"],
+      "keywords": ["easing", "spring", "gesture", "swipe", "drag", "micro-interaction", "screen recording", "interruption"],
       "source": {
         "package": "mblode/agent-skills",
         "skill": "ui-animation",
-        "url": "https://github.com/mblode/agent-skills"
+        "url": "https://github.com/mblode/agent-skills",
+        "path": "skills/ui-animation",
+        "ref": "main"
+      }
+    },
+    {
+      "id": "fixing-accessibility",
+      "display_name": "Fixing Accessibility",
+      "tier": "core",
+      "role": "accessibility-specialist",
+      "description": "Owns accessible names, keyboard access, focus and dialogs, semantics, form errors, announcements, and contrast fixes.",
+      "aliases": [],
+      "capabilities": ["accessibility", "components", "content", "audit"],
+      "specialties": ["accessibility"],
+      "keywords": ["aria", "keyboard", "focus", "screen reader", "wcag", "accessible name", "form error"],
+      "source": {
+        "package": "ibelick/ui-skills",
+        "skill": "fixing-accessibility",
+        "url": "https://github.com/ibelick/ui-skills"
       }
     },
     {
@@ -134,6 +166,7 @@
       "tier": "integration",
       "role": "stitch-design-system",
       "description": "Generates a premium semantic DESIGN.md when Google Stitch is the target.",
+      "lead_capable": true,
       "aliases": ["taste-design"],
       "capabilities": [
         "direction",
@@ -145,10 +178,13 @@
         "stitch"
       ],
       "specialties": ["stitch"],
+      "keywords": ["stitch", "design.md"],
       "source": {
         "package": "Leonxlnx/taste-skill",
         "skill": "stitch-design-taste",
-        "url": "https://github.com/Leonxlnx/taste-skill"
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "path": "skills/stitch-skill",
+        "ref": "main"
       }
     },
     {
@@ -159,11 +195,67 @@
       "description": "Creates repository-specific Figma-to-code rules when Figma MCP is connected.",
       "aliases": [],
       "capabilities": ["design-system", "figma", "implementation"],
-      "specialties": ["figma", "design-system"],
+      "specialties": ["figma"],
+      "keywords": ["rules", "conventions", "agents.md", "claude.md"],
+      "requires": ["figma-mcp"],
       "source": {
         "package": "openai/skills",
         "skill": "figma-create-design-system-rules",
         "url": "https://github.com/openai/skills"
+      }
+    },
+    {
+      "id": "figma-implement-design",
+      "display_name": "Figma Implement Design",
+      "tier": "integration",
+      "role": "figma-implementation",
+      "description": "Translates a Figma frame into project-native code with design-token mapping and screenshot parity checks.",
+      "aliases": [],
+      "capabilities": ["figma", "implementation", "components", "design-system"],
+      "specialties": ["figma"],
+      "keywords": ["implement", "frame", "node", "pixel perfect", "handoff", "figma url"],
+      "requires": ["figma-mcp"],
+      "source": {
+        "package": "openai/skills",
+        "skill": "figma-implement-design",
+        "url": "https://github.com/openai/skills"
+      }
+    },
+    {
+      "id": "typography-audit",
+      "display_name": "Typography Audit",
+      "tier": "integration",
+      "role": "typography-audit",
+      "description": "Audits font loading, type scales, measure, spacing, OpenType, and punctuation with scoped, file:line findings.",
+      "aliases": [],
+      "capabilities": ["typography", "layout", "audit"],
+      "specialties": ["typography"],
+      "keywords": ["font loading", "type scale", "punctuation", "opentype", "line height", "measure", "fonts"],
+      "source": {
+        "package": "mblode/agent-skills",
+        "skill": "typography-audit",
+        "url": "https://github.com/mblode/agent-skills",
+        "path": "skills/typography-audit",
+        "ref": "main"
+      }
+    },
+    {
+      "id": "ui-verification",
+      "display_name": "UI Verification",
+      "tier": "integration",
+      "role": "browser-verification",
+      "description": "Measures focus, hit targets, overflow, themes, failure states, and performance in a real browser.",
+      "aliases": [],
+      "capabilities": ["verification", "accessibility", "responsive", "performance", "audit"],
+      "specialties": ["verification"],
+      "keywords": ["browser", "playwright", "probe", "overflow", "hit target", "re-measure", "reproduce"],
+      "requires": ["browser-automation"],
+      "source": {
+        "package": "mblode/agent-skills",
+        "skill": "ui-verification",
+        "url": "https://github.com/mblode/agent-skills",
+        "path": "skills/ui-verification",
+        "ref": "main"
       }
     }
   ]

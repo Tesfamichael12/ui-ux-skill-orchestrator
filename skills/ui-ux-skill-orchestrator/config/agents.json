@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "agents": {
+    "universal": {
+      "label": "Universal (.agents)",
+      "project": [".agents/skills"],
+      "global": [".agents/skills", ".config/agents/skills"]
+    },
+    "amp": {
+      "label": "Amp",
+      "project": [".agents/skills"],
+      "global": [".config/agents/skills"]
+    },
+    "antigravity": {
+      "label": "Antigravity",
+      "project": [".agents/skills", ".gemini/skills"],
+      "global": [".gemini/antigravity/skills", ".gemini/config/skills"]
+    },
+    "augment": {
+      "label": "Augment",
+      "project": [".augment/skills"],
+      "global": [".augment/skills"]
+    },
+    "claude-code": {
+      "label": "Claude Code",
+      "project": [".claude/skills"],
+      "global": [
+        ".claude/skills",
+        {"path": ".claude/plugins/cache", "depth": 6, "include_hidden": true}
+      ]
+    },
+    "cline": {
+      "label": "Cline",
+      "project": [".agents/skills"],
+      "global": [".agents/skills"]
+    },
+    "codebuddy": {
+      "label": "CodeBuddy",
+      "project": [".codebuddy/skills"],
+      "global": [".codebuddy/skills"]
+    },
+    "codex": {
+      "label": "Codex",
+      "project": [".agents/skills", ".codex/skills"],
+      "global": [".codex/skills", ".agents/skills"]
+    },
+    "continue": {
+      "label": "Continue",
+      "project": [".continue/skills"],
+      "global": [".continue/skills"]
+    },
+    "crush": {
+      "label": "Crush",
+      "project": [".crush/skills"],
+      "global": [".config/crush/skills"]
+    },
+    "cursor": {
+      "label": "Cursor",
+      "project": [".agents/skills", ".cursor/skills"],
+      "global": [".cursor/skills"]
+    },
+    "droid": {
+      "label": "Droid (Factory)",
+      "project": [".agents/skills"],
+      "global": [".factory/skills"]
+    },
+    "gemini-cli": {
+      "label": "Gemini CLI",
+      "project": [".agents/skills", ".gemini/skills"],
+      "global": [".gemini/skills"]
+    },
+    "github-copilot": {
+      "label": "GitHub Copilot",
+      "project": [".agents/skills", ".github/skills"],
+      "global": [".copilot/skills"]
+    },
+    "goose": {
+      "label": "Goose",
+      "project": [".goose/skills"],
+      "global": [".config/goose/skills"]
+    },
+    "junie": {
+      "label": "Junie",
+      "project": [".junie/skills"],
+      "global": [".junie/skills"]
+    },
+    "kilo": {
+      "label": "Kilo Code",
+      "project": [".agents/skills"],
+      "global": [".kilo/skills"]
+    },
+    "kiro-cli": {
+      "label": "Kiro CLI",
+      "project": [".kiro/skills"],
+      "global": [".kiro/skills"]
+    },
+    "openhands": {
+      "label": "OpenHands",
+      "project": [".openhands/skills"],
+      "global": [".openhands/skills"]
+    },
+    "opencode": {
+      "label": "OpenCode",
+      "project": [".agents/skills", ".opencode/skills"],
+      "global": [".config/opencode/skills"]
+    },
+    "qoder": {
+      "label": "Qoder",
+      "project": [".qoder/skills"],
+      "global": [".qoder/skills"]
+    },
+    "qwen-code": {
+      "label": "Qwen Code",
+      "project": [".qwen/skills"],
+      "global": [".qwen/skills"]
+    },
+    "roo": {
+      "label": "Roo Code",
+      "project": [".roo/skills"],
+      "global": [".roo/skills"]
+    },
+    "trae": {
+      "label": "Trae",
+      "project": [".trae/skills"],
+      "global": [".trae/skills"]
+    },
+    "warp": {
+      "label": "Warp",
+      "project": [".agents/skills"],
+      "global": [".agents/skills"]
+    },
+    "windsurf": {
+      "label": "Windsurf",
+      "project": [".windsurf/skills"],
+      "global": [".codeium/windsurf/skills"]
+    },
+    "zcode": {
+      "label": "ZCode",
+      "project": [".zcode/skills"],
+      "global": [".zcode/skills"]
+    },
+    "zed": {
+      "label": "Zed",
+      "project": [".agents/skills"],
+      "global": [".agents/skills"]
+    }
+  }
+}

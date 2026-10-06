@@ -12,11 +12,12 @@ from pathlib import Path
 from typing import Sequence
 
 from inventory_ui_skills import (
-    AGENT_ROOTS,
     DEFAULT_CONFIG,
     Module,
+    agent_ids,
     installed_module_ids,
     load_modules,
+    load_prerequisites,
 )
 
 
@@ -57,7 +58,7 @@ def install_command(module: Module, agent: str, project: bool) -> list[str]:
         "--yes",
         "skills",
         "add",
-        module.package,
+        module.install_source,
         "--skill",
         module.install_skill,
         "-a",
@@ -79,6 +80,7 @@ def print_status(
     missing: Sequence[Module],
     agent: str,
     project: bool,
+    prerequisites: dict[str, str],
 ) -> None:
     scope = "project" if project else "global"
     print(f"UI/UX specialist check for {agent} ({scope} install target)")
@@ -91,6 +93,12 @@ def print_status(
         print("Missing modules will be installed from their original repositories:")
         for module in missing:
             print(f"  - {module.id}: {module.source_url}")
+    needed = sorted({item for module in selected for item in module.requires})
+    if needed:
+        print()
+        print("Some modules only work when these tools are available:")
+        for item in needed:
+            print(f"  - {item}: {prerequisites.get(item, '')}")
 
 
 def payload(
@@ -110,6 +118,11 @@ def payload(
         "sources": {
             module.id: module.source_url
             for module in missing
+        },
+        "requires": {
+            module.id: list(module.requires)
+            for module in selected
+            if module.requires
         },
     }
 
@@ -135,7 +148,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--agent",
         required=True,
-        choices=(*AGENT_ROOTS.keys(), "all"),
+        choices=(*agent_ids(), "all"),
         help="Agent destination used by the Skills CLI.",
     )
     parser.add_argument(
@@ -179,7 +192,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--json",
         action="store_true",
-        help="Print machine-readable status for check-only usage.",
+        help="Print machine-readable status; implies --check.",
     )
     return parser
 
@@ -188,6 +201,7 @@ def main() -> int:
     args = build_parser().parse_args()
     try:
         modules = load_modules(args.config.resolve())
+        prerequisites = load_prerequisites(args.config.resolve())
         selected = select_modules(modules, args.include_integrations, args.only)
     except (OSError, KeyError, json.JSONDecodeError, ValueError) as error:
         print(f"Configuration error: {error}", file=sys.stderr)
@@ -213,12 +227,11 @@ def main() -> int:
                 indent=2,
             )
         )
-    else:
-        print_status(selected, installed, missing, args.agent, args.project)
+        return 3 if missing else 0
 
+    print_status(selected, installed, missing, args.agent, args.project, prerequisites)
     if not missing:
-        if not args.json:
-            print("\nPortfolio is ready.")
+        print("\nPortfolio is ready.")
         return 0
     if args.check:
         return 3

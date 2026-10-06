@@ -23,7 +23,9 @@ class SetupTests(unittest.TestCase):
         selected = specialist_setup.select_modules(self.modules, False, [])
         self.assertTrue(selected)
         self.assertTrue(all(module.tier == "core" for module in selected))
-        self.assertNotIn("stitch-design-taste", {module.id for module in selected})
+        ids = {module.id for module in selected}
+        self.assertNotIn("stitch-design-taste", ids)
+        self.assertIn("fixing-accessibility", ids)
 
     def test_integrations_can_be_included(self) -> None:
         selected = specialist_setup.select_modules(self.modules, True, [])
@@ -57,7 +59,7 @@ class SetupTests(unittest.TestCase):
                 "--yes",
                 "skills",
                 "add",
-                "mblode/agent-skills",
+                "https://github.com/mblode/agent-skills/tree/main/skills/ui-animation",
                 "--skill",
                 "ui-animation",
                 "-a",
@@ -66,6 +68,28 @@ class SetupTests(unittest.TestCase):
                 "-g",
             ],
         )
+
+    def test_unpinned_module_installs_from_repository(self) -> None:
+        module = next(item for item in self.modules if item.id == "frontend-design")
+        command = specialist_setup.install_command(module, "claude-code", False)
+        self.assertEqual(command[4:7], ["anthropics/skills", "--skill", "frontend-design"])
+
+    def test_pinned_sources_stay_inside_their_repository(self) -> None:
+        for module in self.modules:
+            source = module.install_source
+            if module.source_path:
+                self.assertTrue(
+                    source.startswith(f"https://github.com/{module.package}/tree/"),
+                    module.id,
+                )
+            else:
+                self.assertEqual(source, module.package)
+
+    def test_payload_reports_tool_prerequisites(self) -> None:
+        selected = specialist_setup.select_modules(self.modules, False, ["ui-verification"])
+        result = specialist_setup.payload(selected, set(), selected, "codex", False)
+        self.assertFalse(result["ready"])
+        self.assertEqual(result["requires"], {"ui-verification": ["browser-automation"]})
 
     def test_project_install_does_not_include_global_flag(self) -> None:
         module = self.modules[0]
@@ -78,7 +102,9 @@ class SetupTests(unittest.TestCase):
         self.assertIn("*", command)
 
     def test_noninteractive_session_does_not_imply_consent(self) -> None:
-        with patch.object(specialist_setup.sys.stdin, "isatty", return_value=False):
+        with patch.object(specialist_setup.sys.stdin, "isatty", return_value=False), patch.object(
+            specialist_setup.sys, "stderr"
+        ):
             self.assertFalse(
                 specialist_setup.confirm_install(3, "codex", project=False)
             )

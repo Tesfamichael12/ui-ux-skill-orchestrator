@@ -1,0 +1,492 @@
+{
+  "schema_version": 1,
+  "tasks": {
+    "create": [
+      "build",
+      "create",
+      "design",
+      "generate",
+      "scaffold",
+      "greenfield",
+      "from scratch",
+      "new page",
+      "new app",
+      "new site",
+      "launch",
+      "prototype"
+    ],
+    "redesign": [
+      "redesign",
+      "revamp",
+      "overhaul",
+      "rebrand",
+      "reimagine",
+      "modernize",
+      "makeover",
+      "new look",
+      "refresh the design"
+    ],
+    "refine": [
+      "refine",
+      "improve",
+      "tweak",
+      "adjust",
+      "polish",
+      "clean up",
+      "tidy",
+      "tighten",
+      "simplify",
+      "declutter",
+      "upgrade"
+    ],
+    "audit": [
+      "audit",
+      "review",
+      "critique",
+      "evaluate",
+      "assess",
+      "inspect",
+      "grade",
+      "feedback",
+      "what's wrong",
+      "check my"
+    ],
+    "debug": [
+      "fix",
+      "bug",
+      "broken",
+      "glitch",
+      "jank",
+      "janky",
+      "stutter",
+      "overflow",
+      "not working",
+      "doesn't work",
+      "regression"
+    ],
+    "translate": [
+      "implement",
+      "convert",
+      "translate",
+      "recreate",
+      "pixel perfect",
+      "from figma",
+      "from the design",
+      "from a mockup",
+      "from a screenshot",
+      "handoff",
+      "match the design"
+    ]
+  },
+  "scopes": {
+    "component": {
+      "max_specialists": 1,
+      "assign_validation": false,
+      "terms": [
+        "button",
+        "input",
+        "card",
+        "modal",
+        "dialog",
+        "tooltip",
+        "toast",
+        "dropdown",
+        "select",
+        "tab",
+        "badge",
+        "chip",
+        "toggle",
+        "checkbox",
+        "icon",
+        "avatar",
+        "component",
+        "widget",
+        "form field",
+        "navbar",
+        "sidebar",
+        "date picker"
+      ]
+    },
+    "page": {
+      "max_specialists": 2,
+      "extended_max_specialists": 3,
+      "terms": [
+        "page",
+        "landing page",
+        "screen",
+        "section",
+        "hero",
+        "homepage",
+        "pricing",
+        "checkout",
+        "signup",
+        "login",
+        "form",
+        "modal flow"
+      ]
+    },
+    "surface": {
+      "max_specialists": 3,
+      "terms": [
+        "app",
+        "application",
+        "product",
+        "dashboard",
+        "portal",
+        "admin",
+        "site",
+        "website",
+        "flow",
+        "onboarding",
+        "platform",
+        "experience"
+      ]
+    },
+    "system": {
+      "max_specialists": 4,
+      "terms": [
+        "design system",
+        "component library",
+        "design token",
+        "style guide",
+        "multi-surface",
+        "brand system",
+        "ui kit",
+        "theme system",
+        "design.md"
+      ]
+    }
+  },
+  "default_scope": "page",
+  "default_task": "create",
+  "rules": [
+    {
+      "id": "stitch-design-system",
+      "description": "Google Stitch or a Stitch-oriented DESIGN.md is the deliverable.",
+      "priority": 100,
+      "when": {"capabilities_any": ["stitch"]},
+      "lead": ["stitch-design-taste"],
+      "support": [
+        {"module": "ui-ux-pro-max", "for": ["typography", "color", "data-viz", "ux"]}
+      ],
+      "validation": [],
+      "exclude": [
+        {"module": "frontend-design", "reason": "The Stitch design system owns visual direction."}
+      ],
+      "recipe": "Stitch workflow"
+    },
+    {
+      "id": "figma-design-system-rules",
+      "description": "Persistent Figma-to-code conventions are requested.",
+      "priority": 95,
+      "when": {
+        "capabilities_any": ["figma"],
+        "terms_any": ["rules", "conventions", "agents.md", "claude.md", "guidelines for"]
+      },
+      "lead": ["figma-create-design-system-rules"],
+      "support": [],
+      "validation": [],
+      "exclude": [],
+      "recipe": "Figma-to-code rules"
+    },
+    {
+      "id": "figma-design-to-code",
+      "description": "UI is implemented from a Figma file or frame.",
+      "priority": 90,
+      "when": {"capabilities_any": ["figma"]},
+      "lead": ["figma-implement-design"],
+      "support": [
+        {"module": "fixing-accessibility", "for": ["accessibility"]},
+        {"module": "ui-animation", "for": ["motion"]}
+      ],
+      "validation": ["ui-verification", "impeccable"],
+      "exclude": [
+        {"module": "frontend-design", "reason": "The Figma design is the visual authority."},
+        {"module": "mies", "reason": "The Figma design is the visual authority."}
+      ],
+      "recipe": "Figma design to code"
+    },
+    {
+      "id": "motion-focus",
+      "description": "Motion is the only open design axis.",
+      "priority": 80,
+      "when": {
+        "capabilities_any": ["motion"],
+        "needs_within": ["motion", "accessibility", "performance", "components", "responsive", "audit", "verification"]
+      },
+      "lead": ["ui-animation"],
+      "support": [
+        {"module": "fixing-accessibility", "for": ["accessibility"]}
+      ],
+      "validation": ["ui-verification", "impeccable"],
+      "exclude": [],
+      "recipe": "Motion task"
+    },
+    {
+      "id": "accessibility-focus",
+      "description": "Accessibility is the primary concern.",
+      "priority": 75,
+      "when": {
+        "capabilities_any": ["accessibility"],
+        "needs_within": ["accessibility", "components", "content", "ux", "responsive", "audit", "verification"]
+      },
+      "lead": ["fixing-accessibility", "impeccable"],
+      "support": [],
+      "validation": ["ui-verification", "impeccable"],
+      "exclude": [],
+      "recipe": "Accessibility audit or fix"
+    },
+    {
+      "id": "typography-audit",
+      "description": "Existing typography needs an audit or fixes.",
+      "priority": 72,
+      "when": {
+        "capabilities_any": ["typography"],
+        "tasks_any": ["audit", "debug", "refine"],
+        "needs_within": ["typography", "layout", "audit", "performance", "verification"]
+      },
+      "lead": ["typography-audit", "impeccable"],
+      "support": [],
+      "validation": ["ui-verification", "impeccable"],
+      "exclude": [],
+      "recipe": "Typography or font task"
+    },
+    {
+      "id": "typography-selection",
+      "description": "Fonts or a type system must be chosen.",
+      "priority": 70,
+      "when": {
+        "capabilities_any": ["typography"],
+        "needs_within": ["typography", "direction", "layout"]
+      },
+      "lead": [
+        {"module": "frontend-design", "when": {"tasks_any": ["create"], "tasks_none": ["refine", "redesign", "audit", "debug"], "terms_none": ["existing", "current"]}},
+        "incumbent"
+      ],
+      "support": [
+        {"module": "ui-ux-pro-max", "for": ["typography"]}
+      ],
+      "validation": [
+        {"module": "impeccable", "when": {"terms_any": ["build", "implement", "develop", "code", "ship"], "scopes_any": ["page", "surface"]}},
+        "typography-audit",
+        "impeccable"
+      ],
+      "exclude": [],
+      "recipe": "Typography or font task"
+    },
+    {
+      "id": "color-selection",
+      "description": "A palette or semantic color system is the open axis.",
+      "priority": 68,
+      "when": {
+        "capabilities_any": ["color"],
+        "needs_within": ["color", "direction", "accessibility", "design-system"]
+      },
+      "lead": [
+        {"module": "frontend-design", "when": {"tasks_any": ["create"], "tasks_none": ["refine", "redesign", "audit", "debug"], "terms_none": ["existing", "current"]}},
+        "incumbent"
+      ],
+      "support": [
+        {"module": "ui-ux-pro-max", "for": ["color"]},
+        {"module": "fixing-accessibility", "for": ["accessibility"]}
+      ],
+      "validation": [
+        {"module": "impeccable", "when": {"terms_any": ["build", "implement", "develop", "code", "ship"], "scopes_any": ["page", "surface"]}},
+        "fixing-accessibility",
+        "impeccable"
+      ],
+      "exclude": [],
+      "recipe": "Color or palette task"
+    },
+    {
+      "id": "browser-verification",
+      "description": "Behavior must be measured in a running browser.",
+      "priority": 66,
+      "when": {
+        "capabilities_any": ["verification"],
+        "needs_within": ["verification", "accessibility", "responsive", "performance", "audit", "layout", "components"]
+      },
+      "lead": ["ui-verification", "impeccable"],
+      "support": [],
+      "validation": [],
+      "exclude": [],
+      "recipe": "Browser verification"
+    },
+    {
+      "id": "audit",
+      "description": "Review or polish an existing interface.",
+      "priority": 60,
+      "when": {"tasks_any": ["audit"]},
+      "lead": ["impeccable"],
+      "support": [
+        {"module": "fixing-accessibility", "for": ["accessibility"]},
+        {"module": "typography-audit", "for": ["typography"]},
+        {"module": "ui-animation", "for": ["motion"]}
+      ],
+      "validation": ["ui-verification"],
+      "exclude": [],
+      "recipe": "Audit or polish"
+    },
+    {
+      "id": "design-system-new",
+      "description": "A new design system is created.",
+      "priority": 56,
+      "when": {
+        "capabilities_any": ["design-system"],
+        "scopes_any": ["system"],
+        "tasks_any": ["create"],
+        "tasks_none": ["redesign", "refine", "audit", "debug"]
+      },
+      "lead": ["frontend-design", "impeccable"],
+      "support": [
+        {"module": "ui-ux-pro-max", "for": ["design-system", "typography", "color", "data-viz"]},
+        {"module": "fixing-accessibility", "for": ["accessibility"]}
+      ],
+      "validation": ["impeccable"],
+      "exclude": [],
+      "recipe": "Design-system creation or extraction"
+    },
+    {
+      "id": "design-system-existing",
+      "description": "An existing design system is extracted, extended, or governed.",
+      "priority": 55,
+      "when": {
+        "capabilities_any": ["design-system"],
+        "scopes_any": ["system"]
+      },
+      "lead": ["impeccable"],
+      "support": [
+        {"module": "ui-ux-pro-max", "for": ["typography", "color", "data-viz"]},
+        {"module": "fixing-accessibility", "for": ["accessibility"]}
+      ],
+      "validation": ["ui-verification"],
+      "exclude": [],
+      "recipe": "Design-system creation or extraction"
+    },
+    {
+      "id": "dashboard",
+      "description": "Dense, data-heavy product surface.",
+      "priority": 50,
+      "when": {"capabilities_any": ["data-viz"]},
+      "lead": [
+        {"module": "mies", "when": {"terms_any": ["calm", "restrained", "restraint", "minimal", "minimalist", "quiet", "understated"]}},
+        "impeccable"
+      ],
+      "support": [
+        {"module": "ui-ux-pro-max", "for": ["data-viz", "typography", "color"]},
+        {"module": "fixing-accessibility", "for": ["accessibility"]},
+        {"module": "ui-animation", "for": ["motion"]}
+      ],
+      "validation": ["impeccable", "ui-verification"],
+      "exclude": [],
+      "recipe": "Dashboard or dense product surface"
+    },
+    {
+      "id": "restrained-direction",
+      "description": "Calm, reductive, premium product UI is requested.",
+      "priority": 45,
+      "when": {"terms_any": ["calm", "restrained", "restraint", "minimal", "minimalist", "quiet", "understated", "declutter", "less noise"]},
+      "lead": ["mies"],
+      "support": [
+        {"module": "ui-ux-pro-max", "for": ["typography", "color"]},
+        {"module": "fixing-accessibility", "for": ["accessibility"]},
+        {"module": "ui-animation", "for": ["motion"]}
+      ],
+      "validation": ["impeccable"],
+      "exclude": [],
+      "recipe": "Restrained or minimal direction"
+    },
+    {
+      "id": "redesign",
+      "description": "An existing interface is redesigned.",
+      "priority": 40,
+      "when": {"tasks_any": ["redesign"]},
+      "lead": [
+        {"module": "frontend-design", "when": {"terms_any": ["rebrand", "new identity", "new brand", "completely new", "from scratch"]}},
+        "impeccable"
+      ],
+      "support": [
+        {"module": "ui-ux-pro-max", "for": ["typography", "color", "data-viz"]},
+        {"module": "ui-animation", "for": ["motion"]},
+        {"module": "fixing-accessibility", "for": ["accessibility"]}
+      ],
+      "validation": ["impeccable", "ui-verification"],
+      "exclude": [],
+      "recipe": "Existing-interface redesign"
+    },
+    {
+      "id": "existing-refinement",
+      "description": "Refine, fix, or translate a page inside an existing visual authority.",
+      "priority": 38,
+      "when": {
+        "tasks_any": ["refine", "debug", "translate"],
+        "tasks_none": ["create", "redesign"],
+        "scopes_any": ["page", "surface", "system"]
+      },
+      "lead": ["incumbent"],
+      "support": [
+        {"module": "ui-animation", "for": ["motion"]},
+        {"module": "fixing-accessibility", "for": ["accessibility"]},
+        {"module": "mies", "for": ["layout"]},
+        {"module": "ui-ux-pro-max", "for": ["typography", "color", "data-viz"]}
+      ],
+      "validation": ["impeccable", "ui-verification"],
+      "exclude": [],
+      "recipe": "Existing-interface refinement or fix"
+    },
+    {
+      "id": "single-component",
+      "description": "One component inside an existing system.",
+      "priority": 35,
+      "when": {
+        "scopes_any": ["component"],
+        "tasks_none": ["redesign"]
+      },
+      "lead": ["incumbent"],
+      "support": [
+        {"module": "ui-animation", "for": ["motion"]},
+        {"module": "fixing-accessibility", "for": ["accessibility"]},
+        {"module": "ui-ux-pro-max", "for": ["typography", "color", "ux"]}
+      ],
+      "validation": ["impeccable"],
+      "exclude": [],
+      "recipe": "Single component: button, input, card, modal, table"
+    },
+    {
+      "id": "greenfield",
+      "description": "New page or product surface with an open visual direction.",
+      "priority": 30,
+      "when": {
+        "tasks_any": ["create"],
+        "scopes_any": ["page", "surface"]
+      },
+      "lead": ["frontend-design", "impeccable"],
+      "support": [
+        {"module": "ui-ux-pro-max", "for": ["typography", "color", "data-viz", "ux"]},
+        {"module": "ui-animation", "for": ["motion"]},
+        {"module": "fixing-accessibility", "for": ["accessibility"]}
+      ],
+      "validation": ["impeccable", "ui-verification"],
+      "exclude": [],
+      "recipe": "Greenfield landing page"
+    },
+    {
+      "id": "default",
+      "description": "Fallback when no specific rule applies.",
+      "priority": 0,
+      "when": {},
+      "lead": [
+        {"module": "frontend-design", "when": {"tasks_any": ["create"]}},
+        "impeccable"
+      ],
+      "support": [
+        {"module": "ui-ux-pro-max", "for": ["typography", "color", "data-viz"]},
+        {"module": "ui-animation", "for": ["motion"]},
+        {"module": "fixing-accessibility", "for": ["accessibility"]}
+      ],
+      "validation": ["impeccable", "ui-verification"],
+      "exclude": [],
+      "recipe": null
+    }
+  ]
+}

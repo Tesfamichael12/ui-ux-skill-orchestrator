@@ -1,6 +1,9 @@
 ---
 name: ui-ux-skill-orchestrator
 description: Route UI/UX and visual frontend work to the smallest high-value combination of installed design skills, then reconcile their guidance into one production-ready blueprint and implementation. Use first when creating, redesigning, reviewing, or polishing pages, components, design systems, typography, color palettes, spacing, layout, responsive behavior, accessibility, motion, Figma/Stitch workflows, or frontend UX—especially when several UI skills overlap and the agent must decide which specialist owns each concern.
+license: MIT
+metadata:
+  version: "0.2.0"
 ---
 
 # UI/UX Skill Orchestrator
@@ -53,13 +56,13 @@ task.
 
 ## Step 1: Discover the available skill portfolio
 
-Determine the host agent (`codex`, `antigravity`, or `all`) and run once:
+Determine the host agent id—for example `codex`, `claude-code`, `cursor`, `github-copilot`, `gemini-cli`, or `antigravity`. List every supported id with `--list-agents`; use `all` when the host is unclear. Then run once:
 
 ```bash
 python3 <skill-base-dir>/scripts/inventory_ui_skills.py --agent <host> --format markdown
 ```
 
-Add `--query "<user request>"` to rank likely specialists. Treat the output as an inventory, not the final routing decision.
+Add `--query "<user request>"` to rank likely specialists by the concerns detected in the request. Treat the output as an inventory, not the final routing decision.
 
 If the script is unavailable, inspect the host's advertised skills and their `name` and `description`. Never claim an unavailable skill was invoked.
 
@@ -107,13 +110,23 @@ Mark only the concerns that can change:
 - accessibility
 - data visualization
 - design-system rules and tokens
+- Figma or Stitch tool workflows
 - framework implementation
 - performance and production hardening
+- runtime verification in a browser
 - visual review and polish
 
 Read [references/capability-map.md](references/capability-map.md) to choose the lead and specialists. Read [references/workflow-recipes.md](references/workflow-recipes.md) when the task matches a common page, component, audit, Figma, Stitch, or motion workflow.
 
 ## Step 4: Form the smallest useful team
+
+Draft the team with the deterministic router:
+
+```bash
+python3 <skill-base-dir>/scripts/route.py --agent <host> --query "<user request>"
+```
+
+Add `--task` (`create`, `redesign`, `refine`, `audit`, `debug`, `translate`) or `--scope` (`component`, `page`, `surface`, `system`) when the inferred value is wrong. The brief names one lead, owned concerns, a validation owner, exclusions, missing preferred modules, tool prerequisites, and the matching recipe. It is a draft: confirm it against the design truth from Step 2, and let explicit user direction or the incumbent system override it. Ask before installing anything it lists as missing.
 
 Use this budget:
 
