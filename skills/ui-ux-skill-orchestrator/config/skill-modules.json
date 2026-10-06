@@ -23,7 +23,16 @@
         "responsive"
       ],
       "specialties": ["direction"],
-      "keywords": ["distinctive", "bold", "editorial", "greenfield", "landing page", "memorable", "art direction", "from scratch"],
+      "keywords": [
+        "distinctive",
+        "bold",
+        "editorial",
+        "greenfield",
+        "landing page",
+        "memorable",
+        "art direction",
+        "from scratch"
+      ],
       "source": {
         "package": "anthropics/skills",
         "skill": "frontend-design",
@@ -54,7 +63,16 @@
         "implementation"
       ],
       "specialties": ["audit", "performance", "responsive"],
-      "keywords": ["polish", "production", "harden", "hardening", "critique", "ship", "redesign", "overhaul"],
+      "keywords": [
+        "polish",
+        "production",
+        "harden",
+        "hardening",
+        "critique",
+        "ship",
+        "redesign",
+        "overhaul"
+      ],
       "source": {
         "package": "pbakaus/impeccable",
         "skill": "impeccable",
@@ -85,7 +103,16 @@
         "implementation"
       ],
       "specialties": ["typography", "color", "data-viz", "ux"],
-      "keywords": ["font pairing", "palette", "chart type", "product type", "style options", "inspiration", "best practice", "tech stack"],
+      "keywords": [
+        "font pairing",
+        "palette",
+        "chart type",
+        "product type",
+        "style options",
+        "inspiration",
+        "best practice",
+        "tech stack"
+      ],
       "source": {
         "package": "nextlevelbuilder/ui-ux-pro-max-skill",
         "skill": "ui-ux-pro-max",
@@ -113,7 +140,18 @@
         "design-system"
       ],
       "specialties": ["direction", "layout"],
-      "keywords": ["calm", "restrained", "restraint", "minimal", "minimalist", "reduce", "declutter", "quiet", "understated", "density"],
+      "keywords": [
+        "calm",
+        "restrained",
+        "restraint",
+        "minimal",
+        "minimalist",
+        "reduce",
+        "declutter",
+        "quiet",
+        "understated",
+        "density"
+      ],
       "source": {
         "package": "deeflect/mies",
         "skill": "mies",
@@ -135,7 +173,16 @@
         "audit"
       ],
       "specialties": ["motion"],
-      "keywords": ["easing", "spring", "gesture", "swipe", "drag", "micro-interaction", "screen recording", "interruption"],
+      "keywords": [
+        "easing",
+        "spring",
+        "gesture",
+        "swipe",
+        "drag",
+        "micro-interaction",
+        "screen recording",
+        "interruption"
+      ],
       "source": {
         "package": "mblode/agent-skills",
         "skill": "ui-animation",
@@ -153,7 +200,15 @@
       "aliases": [],
       "capabilities": ["accessibility", "components", "content", "audit"],
       "specialties": ["accessibility"],
-      "keywords": ["aria", "keyboard", "focus", "screen reader", "wcag", "accessible name", "form error"],
+      "keywords": [
+        "aria",
+        "keyboard",
+        "focus",
+        "screen reader",
+        "wcag",
+        "accessible name",
+        "form error"
+      ],
       "source": {
         "package": "ibelick/ui-skills",
         "skill": "fixing-accessibility",
@@ -211,9 +266,21 @@
       "role": "figma-implementation",
       "description": "Translates a Figma frame into project-native code with design-token mapping and screenshot parity checks.",
       "aliases": [],
-      "capabilities": ["figma", "implementation", "components", "design-system"],
+      "capabilities": [
+        "figma",
+        "implementation",
+        "components",
+        "design-system"
+      ],
       "specialties": ["figma"],
-      "keywords": ["implement", "frame", "node", "pixel perfect", "handoff", "figma url"],
+      "keywords": [
+        "implement",
+        "frame",
+        "node",
+        "pixel perfect",
+        "handoff",
+        "figma url"
+      ],
       "requires": ["figma-mcp"],
       "source": {
         "package": "openai/skills",
@@ -230,7 +297,15 @@
       "aliases": [],
       "capabilities": ["typography", "layout", "audit"],
       "specialties": ["typography"],
-      "keywords": ["font loading", "type scale", "punctuation", "opentype", "line height", "measure", "fonts"],
+      "keywords": [
+        "font loading",
+        "type scale",
+        "punctuation",
+        "opentype",
+        "line height",
+        "measure",
+        "fonts"
+      ],
       "source": {
         "package": "mblode/agent-skills",
         "skill": "typography-audit",
@@ -246,9 +321,23 @@
       "role": "browser-verification",
       "description": "Measures focus, hit targets, overflow, themes, failure states, and performance in a real browser.",
       "aliases": [],
-      "capabilities": ["verification", "accessibility", "responsive", "performance", "audit"],
+      "capabilities": [
+        "verification",
+        "accessibility",
+        "responsive",
+        "performance",
+        "audit"
+      ],
       "specialties": ["verification"],
-      "keywords": ["browser", "playwright", "probe", "overflow", "hit target", "re-measure", "reproduce"],
+      "keywords": [
+        "browser",
+        "playwright",
+        "probe",
+        "overflow",
+        "hit target",
+        "re-measure",
+        "reproduce"
+      ],
       "requires": ["browser-automation"],
       "source": {
         "package": "mblode/agent-skills",

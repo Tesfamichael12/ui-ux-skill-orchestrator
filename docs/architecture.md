@@ -57,12 +57,12 @@ without loading their implementation into the agent's context.
 
 Behavior that changes as the ecosystem changes lives in JSON, not code:
 
-| File | Owns |
-|---|---|
+| File                        | Owns                                                                                                                                        |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | `config/skill-modules.json` | Registered modules: tier, role, capabilities, specialties, ranking keywords, `lead_capable`, tool prerequisites, and pinned install sources |
-| `config/capabilities.json` | The concern taxonomy: description signals, extra query terms, UI evidence, non-UI exclusions, and stopwords |
-| `config/agents.json` | Project and global skill folders for each supported agent, including depth and hidden-folder rules |
-| `config/routing-rules.json` | Task and scope vocabulary, team budgets per scope, and prioritized routing rules |
+| `config/capabilities.json`  | The concern taxonomy: description signals, extra query terms, UI evidence, non-UI exclusions, and stopwords                                 |
+| `config/agents.json`        | Project and global skill folders for each supported agent, including depth and hidden-folder rules                                          |
+| `config/routing-rules.json` | Task and scope vocabulary, team budgets per scope, and prioritized routing rules                                                            |
 
 `validate.py` checks every file's schema and cross-references, so a typo in a
 module id, capability, or recipe name fails CI instead of misrouting at

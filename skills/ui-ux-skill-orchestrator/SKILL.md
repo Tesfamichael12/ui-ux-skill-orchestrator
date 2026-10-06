@@ -130,12 +130,12 @@ Add `--task` (`create`, `redesign`, `refine`, `audit`, `debug`, `translate`) or 
 
 Use this budget:
 
-| Scope | Portfolio |
-|---|---|
-| Narrow fix or single component | 1 lead or specialist; add 1 reviewer only if risk warrants it |
-| Page or focused feature | 1 lead + up to 2 specialists; allow a third only when research, motion, and production validation are all independently open |
-| Product surface or redesign | 1 lead + up to 3 specialists |
-| Design system or multi-surface program | 1 lead + up to 4 specialists, phased rather than simultaneous |
+| Scope                                  | Portfolio                                                                                                                    |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Narrow fix or single component         | 1 lead or specialist; add 1 reviewer only if risk warrants it                                                                |
+| Page or focused feature                | 1 lead + up to 2 specialists; allow a third only when research, motion, and production validation are all independently open |
+| Product surface or redesign            | 1 lead + up to 3 specialists                                                                                                 |
+| Design system or multi-surface program | 1 lead + up to 4 specialists, phased rather than simultaneous                                                                |
 
 Typical ownership:
 
@@ -191,7 +191,7 @@ When independent read-only analysis can run in parallel, give every specialist t
 Use a decision ledger for every contested axis:
 
 | Axis | Owner | Evidence | Final decision | Rejected conflict |
-|---|---|---|---|---|
+| ---- | ----- | -------- | -------------- | ----------------- |
 
 Apply these arbitration rules:
 

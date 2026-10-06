@@ -26,7 +26,7 @@
       "project": [".claude/skills"],
       "global": [
         ".claude/skills",
-        {"path": ".claude/plugins/cache", "depth": 6, "include_hidden": true}
+        { "path": ".claude/plugins/cache", "depth": 6, "include_hidden": true }
       ]
     },
     "cline": {

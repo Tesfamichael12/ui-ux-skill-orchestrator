@@ -4,30 +4,30 @@ Use this file to appoint one lead and narrowly scoped specialists. Installed met
 
 ## Authority model
 
-| Role | Owns | Must not override |
-|---|---|---|
-| Incumbent system | Existing tokens, components, brand, behavior | Explicit redesign requirements |
-| Lead skill | Product mode, visual thesis, hierarchy, coherence | User requirements, accessibility, platform conventions |
-| Domain specialist | Mechanics within one assigned concern | Lead direction or another specialist's concern |
-| Implementation specialist | Framework-native realization | Settled design decisions without evidence |
-| Validation owner | Findings and release gate | Product scope or aesthetic direction |
+| Role                      | Owns                                              | Must not override                                      |
+| ------------------------- | ------------------------------------------------- | ------------------------------------------------------ |
+| Incumbent system          | Existing tokens, components, brand, behavior      | Explicit redesign requirements                         |
+| Lead skill                | Product mode, visual thesis, hierarchy, coherence | User requirements, accessibility, platform conventions |
+| Domain specialist         | Mechanics within one assigned concern             | Lead direction or another specialist's concern         |
+| Implementation specialist | Framework-native realization                      | Settled design decisions without evidence              |
+| Validation owner          | Findings and release gate                         | Product scope or aesthetic direction                   |
 
 ## Primary portfolio
 
-| Skill | Appoint when | Strongest ownership | Do not appoint for |
-|---|---|---|---|
-| `frontend-design` | New UI or a deliberate new visual direction needs a distinctive thesis | Subject-specific aesthetic direction, typography personality, palette intent, layout signature, UX copy | Mechanical audits or small fixes inside a mature design system |
-| `impeccable` | Building, redesigning, critiquing, auditing, hardening, or polishing a production interface | End-to-end craft, mode selection, hierarchy, responsive quality, audit, hardening, bounded visual QA | Acting as a second independent visual lead beside another lead |
-| `mies` | The brief calls for calm, premium restraint, reduction, exact spacing, or removal of noise | Subtractive critique, proportion, spacing, alignment, density, restrained product UI | Adding decorative novelty or generating many visual options |
-| `ui-ux-pro-max` | The task needs searchable evidence for product patterns, font pairings, palettes, charts, UX rules, or stack guidance | Candidate research and structured recommendations across typography, color, style, charts, UX, and frameworks | Final creative authority or replacing incumbent tokens without approval |
-| `ui-animation` | Motion is requested, complex, broken, performance-sensitive, gesture-based, or must match a recording | Motion purpose, timing, easing, springs, gestures, interruption, reduced motion, animation review | Palette, typography, or overall page direction |
-| `fixing-accessibility` | Accessibility is requested, audited, or at risk in a change | WCAG semantics, accessible names, keyboard and focus behavior, contrast, announcements | Visual direction or non-accessibility polish |
-| `stitch-design-taste` (`taste-design` alias) | Google Stitch or a Stitch-oriented `DESIGN.md` is the delivery target | Semantic Stitch design systems, anti-generic generation constraints, calibrated motion guidance | Ordinary frontend implementation without Stitch |
-| `figma-create-design-system-rules` | Figma MCP is connected and the user wants persistent Figma-to-code conventions | Codebase-derived design-system rules and Figma implementation workflow | General visual design, or use without Figma MCP |
-| `figma-implement-design` | Figma MCP is connected and a Figma frame or selection must become code | Design-faithful implementation, token and component mapping, asset handling, parity checks | Inventing direction, or use without Figma MCP |
-| `typography-audit` | Existing typography needs an audit or a validation pass | Hierarchy, scale, measure, line height, pairing, and font-loading findings | Choosing a new brand typeface from scratch |
-| `ui-verification` | Behavior must be measured in a running browser | Screenshots, responsive and interaction checks, console and layout-shift evidence | Design decisions, or use without browser tooling |
-| `ui-ux-skill-orchestrator` | Multiple skills overlap or any frontend UI/UX task needs routing | Portfolio selection, ownership, sequencing, conflict resolution, synthesis | Supplying a competing aesthetic opinion |
+| Skill                                        | Appoint when                                                                                                          | Strongest ownership                                                                                           | Do not appoint for                                                      |
+| -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `frontend-design`                            | New UI or a deliberate new visual direction needs a distinctive thesis                                                | Subject-specific aesthetic direction, typography personality, palette intent, layout signature, UX copy       | Mechanical audits or small fixes inside a mature design system          |
+| `impeccable`                                 | Building, redesigning, critiquing, auditing, hardening, or polishing a production interface                           | End-to-end craft, mode selection, hierarchy, responsive quality, audit, hardening, bounded visual QA          | Acting as a second independent visual lead beside another lead          |
+| `mies`                                       | The brief calls for calm, premium restraint, reduction, exact spacing, or removal of noise                            | Subtractive critique, proportion, spacing, alignment, density, restrained product UI                          | Adding decorative novelty or generating many visual options             |
+| `ui-ux-pro-max`                              | The task needs searchable evidence for product patterns, font pairings, palettes, charts, UX rules, or stack guidance | Candidate research and structured recommendations across typography, color, style, charts, UX, and frameworks | Final creative authority or replacing incumbent tokens without approval |
+| `ui-animation`                               | Motion is requested, complex, broken, performance-sensitive, gesture-based, or must match a recording                 | Motion purpose, timing, easing, springs, gestures, interruption, reduced motion, animation review             | Palette, typography, or overall page direction                          |
+| `fixing-accessibility`                       | Accessibility is requested, audited, or at risk in a change                                                           | WCAG semantics, accessible names, keyboard and focus behavior, contrast, announcements                        | Visual direction or non-accessibility polish                            |
+| `stitch-design-taste` (`taste-design` alias) | Google Stitch or a Stitch-oriented `DESIGN.md` is the delivery target                                                 | Semantic Stitch design systems, anti-generic generation constraints, calibrated motion guidance               | Ordinary frontend implementation without Stitch                         |
+| `figma-create-design-system-rules`           | Figma MCP is connected and the user wants persistent Figma-to-code conventions                                        | Codebase-derived design-system rules and Figma implementation workflow                                        | General visual design, or use without Figma MCP                         |
+| `figma-implement-design`                     | Figma MCP is connected and a Figma frame or selection must become code                                                | Design-faithful implementation, token and component mapping, asset handling, parity checks                    | Inventing direction, or use without Figma MCP                           |
+| `typography-audit`                           | Existing typography needs an audit or a validation pass                                                               | Hierarchy, scale, measure, line height, pairing, and font-loading findings                                    | Choosing a new brand typeface from scratch                              |
+| `ui-verification`                            | Behavior must be measured in a running browser                                                                        | Screenshots, responsive and interaction checks, console and layout-shift evidence                             | Design decisions, or use without browser tooling                        |
+| `ui-ux-skill-orchestrator`                   | Multiple skills overlap or any frontend UI/UX task needs routing                                                      | Portfolio selection, ownership, sequencing, conflict resolution, synthesis                                    | Supplying a competing aesthetic opinion                                 |
 
 ## Lead selection
 
@@ -44,25 +44,25 @@ Never appoint `frontend-design`, `impeccable`, and `mies` as three equal creativ
 
 ## Concern routing
 
-| Concern | Preferred owner | Useful support |
-|---|---|---|
-| User flow and information hierarchy | Lead or a discovered UX/research specialist | `impeccable`, `ui-ux-pro-max` evidence |
-| Visual thesis and identity | `frontend-design`, `impeccable`, or `mies` as the single lead | Project brand evidence |
-| Font discovery and pairing | `ui-ux-pro-max` or discovered typography specialist | Lead approves personality and roles |
-| Type scale and hierarchy | Lead or typography specialist | `typography-audit` validates; `mies` for restraint |
-| Palette candidates | `ui-ux-pro-max` | Lead selects; accessibility validates |
-| Semantic color tokens and contrast | Existing design system or `fixing-accessibility` | `ui-ux-pro-max` candidates |
-| Spacing, grid, density, alignment | Existing system, `mies`, or `impeccable` layout mode | Responsive specialist |
-| Component anatomy and states | Existing component system or discovered component specialist | `fixing-accessibility` |
-| Motion and gestures | `ui-animation` | Lead supplies tone; accessibility validates |
-| Charts and data display | `ui-ux-pro-max` or discovered data-viz specialist | Accessibility and product context |
-| Responsive adaptation | `impeccable` or discovered responsive specialist | Existing breakpoints |
-| Accessibility | `fixing-accessibility`; otherwise `impeccable` audit | `ui-animation` for reduced motion |
-| Figma frame implementation | `figma-implement-design` | Existing tokens and components |
-| Framework implementation | Discovered stack specialist or project conventions | Design owner reviews fidelity |
-| Performance | Framework/performance specialist | `ui-animation` for motion performance |
-| Runtime verification | `ui-verification` | `impeccable` for code-level review |
-| Final visual polish | `impeccable` | `mies` only for a subtractive pass |
+| Concern                             | Preferred owner                                               | Useful support                                     |
+| ----------------------------------- | ------------------------------------------------------------- | -------------------------------------------------- |
+| User flow and information hierarchy | Lead or a discovered UX/research specialist                   | `impeccable`, `ui-ux-pro-max` evidence             |
+| Visual thesis and identity          | `frontend-design`, `impeccable`, or `mies` as the single lead | Project brand evidence                             |
+| Font discovery and pairing          | `ui-ux-pro-max` or discovered typography specialist           | Lead approves personality and roles                |
+| Type scale and hierarchy            | Lead or typography specialist                                 | `typography-audit` validates; `mies` for restraint |
+| Palette candidates                  | `ui-ux-pro-max`                                               | Lead selects; accessibility validates              |
+| Semantic color tokens and contrast  | Existing design system or `fixing-accessibility`              | `ui-ux-pro-max` candidates                         |
+| Spacing, grid, density, alignment   | Existing system, `mies`, or `impeccable` layout mode          | Responsive specialist                              |
+| Component anatomy and states        | Existing component system or discovered component specialist  | `fixing-accessibility`                             |
+| Motion and gestures                 | `ui-animation`                                                | Lead supplies tone; accessibility validates        |
+| Charts and data display             | `ui-ux-pro-max` or discovered data-viz specialist             | Accessibility and product context                  |
+| Responsive adaptation               | `impeccable` or discovered responsive specialist              | Existing breakpoints                               |
+| Accessibility                       | `fixing-accessibility`; otherwise `impeccable` audit          | `ui-animation` for reduced motion                  |
+| Figma frame implementation          | `figma-implement-design`                                      | Existing tokens and components                     |
+| Framework implementation            | Discovered stack specialist or project conventions            | Design owner reviews fidelity                      |
+| Performance                         | Framework/performance specialist                              | `ui-animation` for motion performance              |
+| Runtime verification                | `ui-verification`                                             | `impeccable` for code-level review                 |
+| Final visual polish                 | `impeccable`                                                  | `mies` only for a subtractive pass                 |
 
 ## Data-driven routing
 

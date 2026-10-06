@@ -351,12 +351,7 @@
         "platform convention",
         "native app"
       ],
-      "query_terms": [
-        "iphone",
-        "ipad",
-        "native",
-        "app store"
-      ]
+      "query_terms": ["iphone", "ipad", "native", "app store"]
     },
     "performance": {
       "label": "Front-end performance",
@@ -406,13 +401,7 @@
         "quality bar",
         "ship verdict"
       ],
-      "query_terms": [
-        "evaluate",
-        "assess",
-        "feedback",
-        "qa",
-        "grade"
-      ]
+      "query_terms": ["evaluate", "assess", "feedback", "qa", "grade"]
     },
     "verification": {
       "label": "Runtime and visual verification",
@@ -451,12 +440,7 @@
         "design language",
         "ui kit"
       ],
-      "query_terms": [
-        "token",
-        "tokens",
-        "theme system",
-        "variables"
-      ]
+      "query_terms": ["token", "tokens", "theme system", "variables"]
     },
     "data-viz": {
       "label": "Data visualization",
@@ -477,13 +461,7 @@
         "d3.js",
         "d3js"
       ],
-      "query_terms": [
-        "metrics",
-        "analytics",
-        "stats",
-        "statistics",
-        "plot"
-      ]
+      "query_terms": ["metrics", "analytics", "stats", "statistics", "plot"]
     },
     "implementation": {
       "label": "Framework implementation",
@@ -521,11 +499,7 @@
     },
     "figma": {
       "label": "Figma workflows",
-      "signals": [
-        "figma",
-        "figma mcp",
-        "code connect"
-      ],
+      "signals": ["figma", "figma mcp", "code connect"],
       "query_terms": []
     },
     "stitch": {
@@ -537,9 +511,7 @@
         "stitch project",
         "stitch screen"
       ],
-      "query_terms": [
-        "stitch"
-      ]
+      "query_terms": ["stitch"]
     }
   },
   "ui_terms": [

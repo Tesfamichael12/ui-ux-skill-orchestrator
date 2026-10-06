@@ -95,36 +95,36 @@ explicitly approved the listed sources.
 
 `setup.py` exit codes:
 
-| Code | Meaning |
-|---|---|
-| 0 | Every selected module is installed, or a dry run printed its commands |
-| 2 | Configuration error, such as an unknown module name |
-| 3 | Check only (`--check` or `--json`): modules are missing |
-| 4 | The user declined installation |
-| 5 | `npx` is not available |
-| 6 | An installation command failed |
-| 7 | Installation finished, but a module is still not discoverable |
+| Code | Meaning                                                               |
+| ---- | --------------------------------------------------------------------- |
+| 0    | Every selected module is installed, or a dry run printed its commands |
+| 2    | Configuration error, such as an unknown module name                   |
+| 3    | Check only (`--check` or `--json`): modules are missing               |
+| 4    | The user declined installation                                        |
+| 5    | `npx` is not available                                                |
+| 6    | An installation command failed                                        |
+| 7    | Installation finished, but a module is still not discoverable         |
 
 ### Core modules
 
-| Module | Primary responsibility | Source |
-|---|---|---|
-| `frontend-design` | Distinctive visual direction | [anthropics/skills](https://github.com/anthropics/skills) |
-| `impeccable` | Production integration and audit | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) |
-| `ui-ux-pro-max` | Font, palette, UX, chart, and stack evidence | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) |
-| `mies` | Restraint, spacing, hierarchy, and reduction | [deeflect/mies](https://github.com/deeflect/mies) |
-| `ui-animation` | Motion mechanics and reduced-motion behavior | [mblode/agent-skills](https://github.com/mblode/agent-skills) |
-| `fixing-accessibility` | WCAG semantics, keyboard, focus, and contrast fixes | [ibelick/ui-skills](https://github.com/ibelick/ui-skills) |
+| Module                 | Primary responsibility                              | Source                                                                                          |
+| ---------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `frontend-design`      | Distinctive visual direction                        | [anthropics/skills](https://github.com/anthropics/skills)                                       |
+| `impeccable`           | Production integration and audit                    | [pbakaus/impeccable](https://github.com/pbakaus/impeccable)                                     |
+| `ui-ux-pro-max`        | Font, palette, UX, chart, and stack evidence        | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) |
+| `mies`                 | Restraint, spacing, hierarchy, and reduction        | [deeflect/mies](https://github.com/deeflect/mies)                                               |
+| `ui-animation`         | Motion mechanics and reduced-motion behavior        | [mblode/agent-skills](https://github.com/mblode/agent-skills)                                   |
+| `fixing-accessibility` | WCAG semantics, keyboard, focus, and contrast fixes | [ibelick/ui-skills](https://github.com/ibelick/ui-skills)                                       |
 
 ### Optional integrations
 
-| Module | Used when | Requires | Source |
-|---|---|---|---|
-| `stitch-design-taste` | Google Stitch or `DESIGN.md` is the target | — | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) |
-| `figma-create-design-system-rules` | Figma-to-code rules are requested | Figma MCP | [openai/skills](https://github.com/openai/skills) |
-| `figma-implement-design` | A Figma frame must become code | Figma MCP | [openai/skills](https://github.com/openai/skills) |
-| `typography-audit` | Existing typography needs an audit | — | [mblode/agent-skills](https://github.com/mblode/agent-skills) |
-| `ui-verification` | Behavior must be measured in a browser | Browser automation | [mblode/agent-skills](https://github.com/mblode/agent-skills) |
+| Module                             | Used when                                  | Requires           | Source                                                          |
+| ---------------------------------- | ------------------------------------------ | ------------------ | --------------------------------------------------------------- |
+| `stitch-design-taste`              | Google Stitch or `DESIGN.md` is the target | —                  | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) |
+| `figma-create-design-system-rules` | Figma-to-code rules are requested          | Figma MCP          | [openai/skills](https://github.com/openai/skills)               |
+| `figma-implement-design`           | A Figma frame must become code             | Figma MCP          | [openai/skills](https://github.com/openai/skills)               |
+| `typography-audit`                 | Existing typography needs an audit         | —                  | [mblode/agent-skills](https://github.com/mblode/agent-skills)   |
+| `ui-verification`                  | Behavior must be measured in a browser     | Browser automation | [mblode/agent-skills](https://github.com/mblode/agent-skills)   |
 
 These dependencies are referenced, not redistributed. Each remains governed by
 its own license and release process. Skills that fetch and follow remote

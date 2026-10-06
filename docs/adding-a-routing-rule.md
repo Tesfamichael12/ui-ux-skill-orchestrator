@@ -32,41 +32,39 @@ fallback and must have the lowest priority.
     "needs_within": ["motion", "accessibility", "performance", "components"]
   },
   "lead": ["ui-animation"],
-  "support": [
-    {"module": "fixing-accessibility", "for": ["accessibility"]}
-  ],
+  "support": [{ "module": "fixing-accessibility", "for": ["accessibility"] }],
   "validation": ["ui-verification", "impeccable"],
   "exclude": [],
   "recipe": "Motion task"
 }
 ```
 
-| Field | Meaning |
-|---|---|
-| `when` | Conditions; all must hold |
-| `lead` | Ordered preferences. The first installed one leads. `"incumbent"` means the existing design system or supplied reference leads |
-| `support` | Specialists, each added only for the listed concerns the request actually raises and nobody already owns |
-| `validation` | Ordered preferences for the single validation owner |
-| `exclude` | Installed modules to keep out, with the reason shown in the brief |
-| `recipe` | A `## ` heading in `references/workflow-recipes.md`, or `null` |
+| Field        | Meaning                                                                                                                        |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `when`       | Conditions; all must hold                                                                                                      |
+| `lead`       | Ordered preferences. The first installed one leads. `"incumbent"` means the existing design system or supplied reference leads |
+| `support`    | Specialists, each added only for the listed concerns the request actually raises and nobody already owns                       |
+| `validation` | Ordered preferences for the single validation owner                                                                            |
+| `exclude`    | Installed modules to keep out, with the reason shown in the brief                                                              |
+| `recipe`     | A `## ` heading in `references/workflow-recipes.md`, or `null`                                                                 |
 
 `lead` and `validation` entries may be objects with their own condition:
 
 ```json
-{"module": "mies", "when": {"terms_any": ["calm", "minimal"]}}
+{ "module": "mies", "when": { "terms_any": ["calm", "minimal"] } }
 ```
 
 ## Conditions
 
-| Key | Holds when |
-|---|---|
-| `capabilities_any` | At least one listed concern is present |
-| `capabilities_all` | Every listed concern is present |
-| `capabilities_none` | No listed concern is present |
-| `needs_within` | Every detected concern is in the list (use it for focused rules) |
-| `tasks_any` / `tasks_none` | A listed task is / is not detected |
-| `scopes_any` | The scope is one of the listed scopes |
-| `terms_any` / `terms_none` | A listed phrase is / is not in the request |
+| Key                        | Holds when                                                       |
+| -------------------------- | ---------------------------------------------------------------- |
+| `capabilities_any`         | At least one listed concern is present                           |
+| `capabilities_all`         | Every listed concern is present                                  |
+| `capabilities_none`        | No listed concern is present                                     |
+| `needs_within`             | Every detected concern is in the list (use it for focused rules) |
+| `tasks_any` / `tasks_none` | A listed task is / is not detected                               |
+| `scopes_any`               | The scope is one of the listed scopes                            |
+| `terms_any` / `terms_none` | A listed phrase is / is not in the request                       |
 
 ## Budgets
 

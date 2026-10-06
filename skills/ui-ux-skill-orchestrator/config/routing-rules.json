@@ -164,14 +164,20 @@
       "id": "stitch-design-system",
       "description": "Google Stitch or a Stitch-oriented DESIGN.md is the deliverable.",
       "priority": 100,
-      "when": {"capabilities_any": ["stitch"]},
+      "when": { "capabilities_any": ["stitch"] },
       "lead": ["stitch-design-taste"],
       "support": [
-        {"module": "ui-ux-pro-max", "for": ["typography", "color", "data-viz", "ux"]}
+        {
+          "module": "ui-ux-pro-max",
+          "for": ["typography", "color", "data-viz", "ux"]
+        }
       ],
       "validation": [],
       "exclude": [
-        {"module": "frontend-design", "reason": "The Stitch design system owns visual direction."}
+        {
+          "module": "frontend-design",
+          "reason": "The Stitch design system owns visual direction."
+        }
       ],
       "recipe": "Stitch workflow"
     },
@@ -181,7 +187,13 @@
       "priority": 95,
       "when": {
         "capabilities_any": ["figma"],
-        "terms_any": ["rules", "conventions", "agents.md", "claude.md", "guidelines for"]
+        "terms_any": [
+          "rules",
+          "conventions",
+          "agents.md",
+          "claude.md",
+          "guidelines for"
+        ]
       },
       "lead": ["figma-create-design-system-rules"],
       "support": [],
@@ -193,16 +205,22 @@
       "id": "figma-design-to-code",
       "description": "UI is implemented from a Figma file or frame.",
       "priority": 90,
-      "when": {"capabilities_any": ["figma"]},
+      "when": { "capabilities_any": ["figma"] },
       "lead": ["figma-implement-design"],
       "support": [
-        {"module": "fixing-accessibility", "for": ["accessibility"]},
-        {"module": "ui-animation", "for": ["motion"]}
+        { "module": "fixing-accessibility", "for": ["accessibility"] },
+        { "module": "ui-animation", "for": ["motion"] }
       ],
       "validation": ["ui-verification", "impeccable"],
       "exclude": [
-        {"module": "frontend-design", "reason": "The Figma design is the visual authority."},
-        {"module": "mies", "reason": "The Figma design is the visual authority."}
+        {
+          "module": "frontend-design",
+          "reason": "The Figma design is the visual authority."
+        },
+        {
+          "module": "mies",
+          "reason": "The Figma design is the visual authority."
+        }
       ],
       "recipe": "Figma design to code"
     },
@@ -212,11 +230,19 @@
       "priority": 80,
       "when": {
         "capabilities_any": ["motion"],
-        "needs_within": ["motion", "accessibility", "performance", "components", "responsive", "audit", "verification"]
+        "needs_within": [
+          "motion",
+          "accessibility",
+          "performance",
+          "components",
+          "responsive",
+          "audit",
+          "verification"
+        ]
       },
       "lead": ["ui-animation"],
       "support": [
-        {"module": "fixing-accessibility", "for": ["accessibility"]}
+        { "module": "fixing-accessibility", "for": ["accessibility"] }
       ],
       "validation": ["ui-verification", "impeccable"],
       "exclude": [],
@@ -228,7 +254,15 @@
       "priority": 75,
       "when": {
         "capabilities_any": ["accessibility"],
-        "needs_within": ["accessibility", "components", "content", "ux", "responsive", "audit", "verification"]
+        "needs_within": [
+          "accessibility",
+          "components",
+          "content",
+          "ux",
+          "responsive",
+          "audit",
+          "verification"
+        ]
       },
       "lead": ["fixing-accessibility", "impeccable"],
       "support": [],
@@ -243,7 +277,13 @@
       "when": {
         "capabilities_any": ["typography"],
         "tasks_any": ["audit", "debug", "refine"],
-        "needs_within": ["typography", "layout", "audit", "performance", "verification"]
+        "needs_within": [
+          "typography",
+          "layout",
+          "audit",
+          "performance",
+          "verification"
+        ]
       },
       "lead": ["typography-audit", "impeccable"],
       "support": [],
@@ -260,14 +300,25 @@
         "needs_within": ["typography", "direction", "layout"]
       },
       "lead": [
-        {"module": "frontend-design", "when": {"tasks_any": ["create"], "tasks_none": ["refine", "redesign", "audit", "debug"], "terms_none": ["existing", "current"]}},
+        {
+          "module": "frontend-design",
+          "when": {
+            "tasks_any": ["create"],
+            "tasks_none": ["refine", "redesign", "audit", "debug"],
+            "terms_none": ["existing", "current"]
+          }
+        },
         "incumbent"
       ],
-      "support": [
-        {"module": "ui-ux-pro-max", "for": ["typography"]}
-      ],
+      "support": [{ "module": "ui-ux-pro-max", "for": ["typography"] }],
       "validation": [
-        {"module": "impeccable", "when": {"terms_any": ["build", "implement", "develop", "code", "ship"], "scopes_any": ["page", "surface"]}},
+        {
+          "module": "impeccable",
+          "when": {
+            "terms_any": ["build", "implement", "develop", "code", "ship"],
+            "scopes_any": ["page", "surface"]
+          }
+        },
         "typography-audit",
         "impeccable"
       ],
@@ -283,15 +334,28 @@
         "needs_within": ["color", "direction", "accessibility", "design-system"]
       },
       "lead": [
-        {"module": "frontend-design", "when": {"tasks_any": ["create"], "tasks_none": ["refine", "redesign", "audit", "debug"], "terms_none": ["existing", "current"]}},
+        {
+          "module": "frontend-design",
+          "when": {
+            "tasks_any": ["create"],
+            "tasks_none": ["refine", "redesign", "audit", "debug"],
+            "terms_none": ["existing", "current"]
+          }
+        },
         "incumbent"
       ],
       "support": [
-        {"module": "ui-ux-pro-max", "for": ["color"]},
-        {"module": "fixing-accessibility", "for": ["accessibility"]}
+        { "module": "ui-ux-pro-max", "for": ["color"] },
+        { "module": "fixing-accessibility", "for": ["accessibility"] }
       ],
       "validation": [
-        {"module": "impeccable", "when": {"terms_any": ["build", "implement", "develop", "code", "ship"], "scopes_any": ["page", "surface"]}},
+        {
+          "module": "impeccable",
+          "when": {
+            "terms_any": ["build", "implement", "develop", "code", "ship"],
+            "scopes_any": ["page", "surface"]
+          }
+        },
         "fixing-accessibility",
         "impeccable"
       ],
@@ -304,7 +368,15 @@
       "priority": 66,
       "when": {
         "capabilities_any": ["verification"],
-        "needs_within": ["verification", "accessibility", "responsive", "performance", "audit", "layout", "components"]
+        "needs_within": [
+          "verification",
+          "accessibility",
+          "responsive",
+          "performance",
+          "audit",
+          "layout",
+          "components"
+        ]
       },
       "lead": ["ui-verification", "impeccable"],
       "support": [],
@@ -316,12 +388,12 @@
       "id": "audit",
       "description": "Review or polish an existing interface.",
       "priority": 60,
-      "when": {"tasks_any": ["audit"]},
+      "when": { "tasks_any": ["audit"] },
       "lead": ["impeccable"],
       "support": [
-        {"module": "fixing-accessibility", "for": ["accessibility"]},
-        {"module": "typography-audit", "for": ["typography"]},
-        {"module": "ui-animation", "for": ["motion"]}
+        { "module": "fixing-accessibility", "for": ["accessibility"] },
+        { "module": "typography-audit", "for": ["typography"] },
+        { "module": "ui-animation", "for": ["motion"] }
       ],
       "validation": ["ui-verification"],
       "exclude": [],
@@ -339,8 +411,11 @@
       },
       "lead": ["frontend-design", "impeccable"],
       "support": [
-        {"module": "ui-ux-pro-max", "for": ["design-system", "typography", "color", "data-viz"]},
-        {"module": "fixing-accessibility", "for": ["accessibility"]}
+        {
+          "module": "ui-ux-pro-max",
+          "for": ["design-system", "typography", "color", "data-viz"]
+        },
+        { "module": "fixing-accessibility", "for": ["accessibility"] }
       ],
       "validation": ["impeccable"],
       "exclude": [],
@@ -356,8 +431,11 @@
       },
       "lead": ["impeccable"],
       "support": [
-        {"module": "ui-ux-pro-max", "for": ["typography", "color", "data-viz"]},
-        {"module": "fixing-accessibility", "for": ["accessibility"]}
+        {
+          "module": "ui-ux-pro-max",
+          "for": ["typography", "color", "data-viz"]
+        },
+        { "module": "fixing-accessibility", "for": ["accessibility"] }
       ],
       "validation": ["ui-verification"],
       "exclude": [],
@@ -367,15 +445,31 @@
       "id": "dashboard",
       "description": "Dense, data-heavy product surface.",
       "priority": 50,
-      "when": {"capabilities_any": ["data-viz"]},
+      "when": { "capabilities_any": ["data-viz"] },
       "lead": [
-        {"module": "mies", "when": {"terms_any": ["calm", "restrained", "restraint", "minimal", "minimalist", "quiet", "understated"]}},
+        {
+          "module": "mies",
+          "when": {
+            "terms_any": [
+              "calm",
+              "restrained",
+              "restraint",
+              "minimal",
+              "minimalist",
+              "quiet",
+              "understated"
+            ]
+          }
+        },
         "impeccable"
       ],
       "support": [
-        {"module": "ui-ux-pro-max", "for": ["data-viz", "typography", "color"]},
-        {"module": "fixing-accessibility", "for": ["accessibility"]},
-        {"module": "ui-animation", "for": ["motion"]}
+        {
+          "module": "ui-ux-pro-max",
+          "for": ["data-viz", "typography", "color"]
+        },
+        { "module": "fixing-accessibility", "for": ["accessibility"] },
+        { "module": "ui-animation", "for": ["motion"] }
       ],
       "validation": ["impeccable", "ui-verification"],
       "exclude": [],
@@ -385,12 +479,24 @@
       "id": "restrained-direction",
       "description": "Calm, reductive, premium product UI is requested.",
       "priority": 45,
-      "when": {"terms_any": ["calm", "restrained", "restraint", "minimal", "minimalist", "quiet", "understated", "declutter", "less noise"]},
+      "when": {
+        "terms_any": [
+          "calm",
+          "restrained",
+          "restraint",
+          "minimal",
+          "minimalist",
+          "quiet",
+          "understated",
+          "declutter",
+          "less noise"
+        ]
+      },
       "lead": ["mies"],
       "support": [
-        {"module": "ui-ux-pro-max", "for": ["typography", "color"]},
-        {"module": "fixing-accessibility", "for": ["accessibility"]},
-        {"module": "ui-animation", "for": ["motion"]}
+        { "module": "ui-ux-pro-max", "for": ["typography", "color"] },
+        { "module": "fixing-accessibility", "for": ["accessibility"] },
+        { "module": "ui-animation", "for": ["motion"] }
       ],
       "validation": ["impeccable"],
       "exclude": [],
@@ -400,15 +506,29 @@
       "id": "redesign",
       "description": "An existing interface is redesigned.",
       "priority": 40,
-      "when": {"tasks_any": ["redesign"]},
+      "when": { "tasks_any": ["redesign"] },
       "lead": [
-        {"module": "frontend-design", "when": {"terms_any": ["rebrand", "new identity", "new brand", "completely new", "from scratch"]}},
+        {
+          "module": "frontend-design",
+          "when": {
+            "terms_any": [
+              "rebrand",
+              "new identity",
+              "new brand",
+              "completely new",
+              "from scratch"
+            ]
+          }
+        },
         "impeccable"
       ],
       "support": [
-        {"module": "ui-ux-pro-max", "for": ["typography", "color", "data-viz"]},
-        {"module": "ui-animation", "for": ["motion"]},
-        {"module": "fixing-accessibility", "for": ["accessibility"]}
+        {
+          "module": "ui-ux-pro-max",
+          "for": ["typography", "color", "data-viz"]
+        },
+        { "module": "ui-animation", "for": ["motion"] },
+        { "module": "fixing-accessibility", "for": ["accessibility"] }
       ],
       "validation": ["impeccable", "ui-verification"],
       "exclude": [],
@@ -425,10 +545,13 @@
       },
       "lead": ["incumbent"],
       "support": [
-        {"module": "ui-animation", "for": ["motion"]},
-        {"module": "fixing-accessibility", "for": ["accessibility"]},
-        {"module": "mies", "for": ["layout"]},
-        {"module": "ui-ux-pro-max", "for": ["typography", "color", "data-viz"]}
+        { "module": "ui-animation", "for": ["motion"] },
+        { "module": "fixing-accessibility", "for": ["accessibility"] },
+        { "module": "mies", "for": ["layout"] },
+        {
+          "module": "ui-ux-pro-max",
+          "for": ["typography", "color", "data-viz"]
+        }
       ],
       "validation": ["impeccable", "ui-verification"],
       "exclude": [],
@@ -444,9 +567,9 @@
       },
       "lead": ["incumbent"],
       "support": [
-        {"module": "ui-animation", "for": ["motion"]},
-        {"module": "fixing-accessibility", "for": ["accessibility"]},
-        {"module": "ui-ux-pro-max", "for": ["typography", "color", "ux"]}
+        { "module": "ui-animation", "for": ["motion"] },
+        { "module": "fixing-accessibility", "for": ["accessibility"] },
+        { "module": "ui-ux-pro-max", "for": ["typography", "color", "ux"] }
       ],
       "validation": ["impeccable"],
       "exclude": [],
@@ -462,9 +585,12 @@
       },
       "lead": ["frontend-design", "impeccable"],
       "support": [
-        {"module": "ui-ux-pro-max", "for": ["typography", "color", "data-viz", "ux"]},
-        {"module": "ui-animation", "for": ["motion"]},
-        {"module": "fixing-accessibility", "for": ["accessibility"]}
+        {
+          "module": "ui-ux-pro-max",
+          "for": ["typography", "color", "data-viz", "ux"]
+        },
+        { "module": "ui-animation", "for": ["motion"] },
+        { "module": "fixing-accessibility", "for": ["accessibility"] }
       ],
       "validation": ["impeccable", "ui-verification"],
       "exclude": [],
@@ -476,13 +602,16 @@
       "priority": 0,
       "when": {},
       "lead": [
-        {"module": "frontend-design", "when": {"tasks_any": ["create"]}},
+        { "module": "frontend-design", "when": { "tasks_any": ["create"] } },
         "impeccable"
       ],
       "support": [
-        {"module": "ui-ux-pro-max", "for": ["typography", "color", "data-viz"]},
-        {"module": "ui-animation", "for": ["motion"]},
-        {"module": "fixing-accessibility", "for": ["accessibility"]}
+        {
+          "module": "ui-ux-pro-max",
+          "for": ["typography", "color", "data-viz"]
+        },
+        { "module": "ui-animation", "for": ["motion"] },
+        { "module": "fixing-accessibility", "for": ["accessibility"] }
       ],
       "validation": ["impeccable", "ui-verification"],
       "exclude": [],
