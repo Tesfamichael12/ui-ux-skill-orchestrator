@@ -1,0 +1,24 @@
+{
+  "name": "ui-ux-skill-orchestrator",
+  "version": "0.2.0",
+  "description": "Routes UI/UX work to the smallest useful team of installed design skills: one lead, narrow specialists, and one validation owner, merged into one implementation.",
+  "author": {
+    "name": "Tesfamichael12",
+    "url": "https://github.com/Tesfamichael12"
+  },
+  "homepage": "https://github.com/Tesfamichael12/ui-ux-skill-orchestrator#readme",
+  "repository": "https://github.com/Tesfamichael12/ui-ux-skill-orchestrator",
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "ux",
+    "design",
+    "frontend",
+    "skills",
+    "orchestration",
+    "accessibility",
+    "typography",
+    "motion",
+    "design-system"
+  ]
+}

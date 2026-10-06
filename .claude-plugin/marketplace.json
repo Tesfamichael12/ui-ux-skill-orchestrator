@@ -1,0 +1,15 @@
+{
+  "name": "ui-ux-skill-orchestrator",
+  "description": "UI/UX Skill Orchestrator for Claude Code.",
+  "owner": {
+    "name": "Tesfamichael12"
+  },
+  "plugins": [
+    {
+      "name": "ui-ux-skill-orchestrator",
+      "source": "./",
+      "description": "Routes UI/UX work to the smallest useful team of installed design skills and merges their guidance into one implementation.",
+      "category": "design"
+    }
+  ]
+}
